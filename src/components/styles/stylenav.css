@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* untuk mengatur border supaya 0 */
+}
+
+
+.colornav {
+    background: linear-gradient(to right, #0A3565, #1782D9);
+}
+
+.napbar {
+    padding-left: 15px;
+}
+
+.nav-app{
+    margin-right: 30px;
+    color:white;
+}
+
+.nav-app:hover{
+    text-decoration: none;
+    color: aqua;
+}
+
+.navbar-nav{
+    margin-left: 80px;
+}
+
+#bt-nav {
+    position: absolute;
+    border-radius: 4px;
+    padding: 3px 15px;
+    background-color: transparent;
+    border: 2px solid white;
+    -webkit-animation-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+#bt-nav:hover {
+    background-color: #4caf50;
+    color: white;
+}
