@@ -6,10 +6,8 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
    } from 'reactstrap';
-import '../components/styles/stylenav.css';
-
+import '../assets/css/stylenav.css';
 import {Link, Router} from 'react-router-dom';
 
 
@@ -44,7 +42,7 @@ class AppNavbar extends Component {
                 <Link className='nav-app' to='/'>Cara Kerja</Link>
               </NavItem>
               <NavItem>
-                <Link className='nav-app' to='/'>Tentang</Link>
+                <Link className='nav-app' to='/'>Tentang Kami</Link>
               </NavItem>
               <NavItem>
                 <Link className='nav-app' to='/'>Bantuan</Link>
