@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import "../components/styles/Trx.css"
+import "../assets/css/Trx.css"
 import {Container} from'reactstrap';
 
 export default class Example extends React.Component {

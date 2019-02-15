@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import './pages/HomePages';
+import TrxPage from './pages/TrxPage';
 import HomePages from './pages/HomePages';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component {
   render() {
     return (
       <div>
-        <HomePages/>
+          <HomePages/>
+          <TrxPage/>
       </div>
     );
   }

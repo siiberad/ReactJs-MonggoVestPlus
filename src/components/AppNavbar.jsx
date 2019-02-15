@@ -8,7 +8,7 @@ import {
   NavItem,
    } from 'reactstrap';
 import '../assets/css/stylenav.css';
-import {Link, Router} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 class AppNavbar extends Component {
@@ -47,7 +47,7 @@ class AppNavbar extends Component {
               <NavItem>
                 <Link className='nav-app' to='/'>Bantuan</Link>
               </NavItem>
-              <button id="bt-nav">Login</button>
+              <button id="bt-nav" to='/register'>Login</button>
             </Nav>
           </Collapse>
         </Navbar>

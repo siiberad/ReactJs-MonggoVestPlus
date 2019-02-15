@@ -1,7 +1,7 @@
 import React from 'react';
-import AppNavbar from '../AppNavbar';
-import AppTrx from '../AppTrx';
-import "../styles/Trx.css"
+import AppNavbar from '../components/AppNavbar.jsx'
+import AppTrx from '../components/AppTrx.jsx';
+import "../assets/css/Trx.css"
 import {Container} from'reactstrap';
 class AppHome extends React.Component {
       render() {
