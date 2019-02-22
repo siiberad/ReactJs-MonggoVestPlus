@@ -1,4 +1,4 @@
-.bt-card{
+/* .bt-card{
    
     border-radius: 30px;
      color: blue;
@@ -25,10 +25,6 @@
      padding-top: 30px;
  }
 
- /* .bg-card {
-     border-radius: 0;
- } */
-
  .cd-card {
      padding-top: 20px;
  }
@@ -39,4 +35,53 @@
 
 .CardTitle {
      text-align: center;
+ } */
+
+.container-header-tentang {
+    margin: auto;
+}
+
+
+ .container-header-card {
+     margin-top: 40px;
+    text-align: center;
  }
+
+
+
+.row-card {
+    position: relative;
+    display: flex;
+}
+
+
+.box-tentang {
+    margin: auto;
+}
+
+
+.cardbox {
+    border-radius: 100%;
+    height: 30vh;
+    width: 30vh;
+    margin: 10px;
+    
+}
+
+.cardbox2 {
+    height: 30vh;
+    width: 30vh;
+    margin: 10px;
+    
+}
+
+.bg-card {
+    border-radius: 100%;
+    border: 0;
+}
+
+.text-detail {
+
+    margin-top: 80px;
+    text-align: justify;
+}

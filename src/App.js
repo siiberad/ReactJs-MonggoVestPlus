@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div>
           <HomePages/>
-          <TrxPage/>
+          {/* <TrxPage/> */}
       </div>
     );
   }

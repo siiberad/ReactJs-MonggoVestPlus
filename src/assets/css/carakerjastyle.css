@@ -1,4 +1,4 @@
-.bt-card{
+/* .bt-card{
    
     border-radius: 30px;
      color: blue;
@@ -25,10 +25,6 @@
      padding-top: 30px;
  }
 
- /* .bg-card {
-     border-radius: 0;
- } */
-
  .cd-card {
      padding-top: 20px;
  }
@@ -39,4 +35,28 @@
 
 .CardTitle {
      text-align: center;
- }
+ } */
+
+.container-carakerja {
+    margin-bottom: 50px;
+}
+
+
+ .h2-header-card {
+    margin-top: 40px;
+   text-align: center;
+}
+
+
+
+/* .row-card {
+   position: relative;
+   display: flex;
+   margin-left: 9%;
+} */
+
+
+.bg-card {
+   border-radius: 100%;
+   border: 0;
+}

@@ -10,7 +10,7 @@ const AppCard = (props) => {
     <Row className = "row-card">
     <Col sm="4">
       <Card>
-        <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
+        <CardImg className="bg-card-home" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
           <CardTitle>Ini Sapiku Kuy</CardTitle>
           <CardSubtitle>DKI Djakarta</CardSubtitle>
@@ -21,7 +21,7 @@ const AppCard = (props) => {
       </Col>
       <Col sm="4">
       <Card>
-        <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
+        <CardImg className="bg-card-home" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
           <CardTitle>Card title</CardTitle>
           <CardSubtitle>Card subtitle</CardSubtitle>
@@ -32,7 +32,7 @@ const AppCard = (props) => {
       </Col>
       <Col sm="4">
       <Card>
-        <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
+        <CardImg className="bg-card-home" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
           <CardTitle>Card title</CardTitle>
           <CardSubtitle>Card subtitle</CardSubtitle>
@@ -43,7 +43,7 @@ const AppCard = (props) => {
       </Col>
       <Col sm="4" className="cd-card">
       <Card>
-        <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
+        <CardImg className="bg-card-home" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
           <CardTitle>Card title</CardTitle>
           <CardSubtitle>Card subtitle</CardSubtitle>
@@ -54,7 +54,7 @@ const AppCard = (props) => {
       </Col>
       <Col sm="4" className="cd-card">
       <Card>
-        <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
+        <CardImg className="bg-card-home" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
           <CardTitle>Card title</CardTitle>
           <CardSubtitle>Card subtitle</CardSubtitle>
@@ -65,7 +65,7 @@ const AppCard = (props) => {
       </Col>
       <Col sm="4" className="cd-card">
       <Card>
-        <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
+        <CardImg className="bg-card-home" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
           <CardTitle>Card title</CardTitle>
           <CardSubtitle>Card subtitle</CardSubtitle>

@@ -5,6 +5,9 @@
     /* untuk mengatur border supaya 0 */
 }
 
+#navbar {
+    transition: top 0.5s;
+}
 
 .colornav {
     background: linear-gradient(to right, #0A3565, #1782D9);
