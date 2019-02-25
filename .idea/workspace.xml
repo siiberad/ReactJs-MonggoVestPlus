@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ae1010c0-bb4c-404a-98b2-91e8297ece5f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AppNavbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppNavbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppTrx.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppTrx.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HomePages.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HomePages.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TrxPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TrxPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModalRegistration.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/RegistrationPage.jsx" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,15 +25,16 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
-    <option name="y" value="2" />
-    <option name="width" value="1378" />
-    <option name="height" value="733" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -56,8 +56,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -97,16 +95,17 @@
       <updated>1550133201760</updated>
       <workItem from="1550133204307" duration="735000" />
       <workItem from="1550241508403" duration="278000" />
+      <workItem from="1550304156266" duration="608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1013000" />
+    <option name="totallyTimeSpent" value="1621000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -123,7 +122,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23809524" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.23809524" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />

@@ -2,14 +2,20 @@
   "name": "binarplus",
   "version": "0.1.0",
   "private": true,
+  "proxy" :"http://localhost:8080",
   "dependencies": {
+    "availity-reactstrap-validation": "^2.5.0",
+    "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
     "node-sass": "^4.11.0",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.4",
-    "reactstrap": "^7.1.0"
+    "react-scripts": "^2.1.5",
+    "reactstrap": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-form": "^8.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
