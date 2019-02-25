@@ -13,7 +13,7 @@ import {
 import axios from "axios";
 import "../assets/css/formstyle.css";
 
-axios.defaults.headers.common["Content-Type"] = "application/json";
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 class AppRegistrationModal extends React.Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class AppRegistrationModal extends React.Component {
   handleChange(event) {
     let name = event.target.name;
     let value = event.target.value;
-    console.log(name, value);
+    //console.log(name, value);
     let data = {};
     data[name] = value;
 
@@ -42,7 +42,7 @@ class AppRegistrationModal extends React.Component {
   submit(e) {
     e.preventDefault();
     axios
-      .post("http://monggovestplus.herokuapp.com/api/register", {
+      .post("http://mgvplus.herokuapp.com/api/register", {
         userFullName: this.state.userFullName,
         userEmail: this.state.userEmail,
         userPassword: this.state.userPassword
@@ -50,7 +50,7 @@ class AppRegistrationModal extends React.Component {
       .then(function(response) {
         console.log(response);
         if (response.status === 201) {
-          alert("Akun anda telah berhasil dibuat");
+          alert("Akun Anda telah berhasil dibuat");
         } else {
           alert("some error ocurred", response.status);
         }
