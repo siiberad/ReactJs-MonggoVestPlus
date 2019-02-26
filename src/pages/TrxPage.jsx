@@ -1,9 +1,8 @@
 import React from 'react';
-import AppNavbar from '../AppNavbar';
-import AppTrx from '../AppTrx';
-import "../styles/Trx.css"
+import AppNavbar from '../components/AppNavbar';
+import AppTrx from '../components/AppTrx';
 import {Container} from'reactstrap';
-class AppHome extends React.Component {
+class TrxPage extends React.Component {
       render() {
           return(
             <div>
@@ -16,4 +15,4 @@ class AppHome extends React.Component {
       }
 }
 
-export default AppHome;
+export default TrxPage;
