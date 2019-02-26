@@ -5,13 +5,16 @@ import "../assets/css/Trx.css"
 import {Container} from'reactstrap';
 import axios from 'axios';
 import Select from 'react-select';
-import options from "../components/Suggestions";
+import options from "./BankName";
+import loggedIn from "../helpers/loggedIn"
+import { Redirect } from 'react-router-dom';
 
 
 class AppTrx extends React.Component {
   constructor(props) {
     super(props);
     this.onProd = this.onProd.bind(this);
+    this.onLot = this.onLot.bind(this); 
     this.onRek = this.onRek.bind(this);
     this.onBankName = this.onBankName.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -19,6 +22,7 @@ class AppTrx extends React.Component {
 
     this.state = {
         productModel: '',
+        lotTaken:'',
         noRekening: '',
         bankModel: '',
         selectedOption: null,
@@ -30,19 +34,20 @@ onProd(productModel) {
     this.setState({
       productModel: productModel.target.value
       });
-      console.log(`Product Selected:`, productModel);
+}
+onLot(lotTaken) {
+  this.setState({
+    lotTaken: lotTaken.target.value
+    });
 }
 onRek(noRekening) {
     this.setState({
       noRekening: noRekening.target.value
       });
 }
-
 onBankName (selectedOption) {
   this.setState({ selectedOption });
-  console.log(`BankModel Selected:`, selectedOption);
 }
-
 
 handleChecked = () => {
   this.setState({
@@ -54,16 +59,18 @@ onSubmit(e) {
     e.preventDefault();
     const serverport = {
         productModel: parseInt(this.state.productModel, 10),
+        lotTaken: parseInt(this.state.lotTaken, 10),
+        bankModel: parseInt(this.state.selectedOption.value, 10),
         noRekening: this.state.noRekening,
-        bankModel: parseInt(this.state.selectedOption.value, 10)
     }
     
     axios
-      .post('users/${userId}/transactions', serverport)
+      .post('http://mgvplus.herokuapp.com/users/${userId}/transactions?productModel=${productId}', serverport)
       .then(res => console.log(res.data));
     
       this.setState({
         productModel: '',
+        lotTaken:'',
         noRekening: '',
         bankModel: '',
         selectedOption: null,
@@ -76,7 +83,10 @@ canBeSubmitted() {
   return check === true && noRekening.length > 0 ;
 }
 
-  render() {
+render() {
+    if (!loggedIn()) {
+    return <Redirect to="/" />
+    }
     const isEnabled = this.canBeSubmitted();
     const { selectedOption } = this.state;
     return (
@@ -88,6 +98,7 @@ canBeSubmitted() {
                 <Label sm={2}>Product</Label>
                 <Col sm={10}>
                 <Input
+                    disabled="true"
                     type= 'text'
                     className="form-control" 
                     value={this.state.productModel}
@@ -101,10 +112,11 @@ canBeSubmitted() {
                 <Label sm={2}>Lot Diambil</Label>
                 <Col sm={10}>
                 <Input
+                    disabled="true"
                     type= 'text'
                     className="form-control" 
-                    value={this.state.productModel}
-                    onChange={this.onProd}
+                    value={this.state.lotTaken}
+                    onChange={this.onLot}
                     >
                 </Input>      
                 </Col>
