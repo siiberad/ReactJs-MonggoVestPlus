@@ -4,6 +4,7 @@ import {
     Route
 } from 'react-router-dom';
 import App from './App'
+import ProfileEditPage from './pages/ProfileEditPage';
 
 class AppRouter extends React.Component{
     render(){
@@ -12,6 +13,7 @@ class AppRouter extends React.Component{
                 <BrowserRouter>
                     <div>
                         <Route exact path='/' component={App}  />
+                        <Route exact path='/profile/edit' component={ProfileEditPage} />
                     </div>
                 </BrowserRouter>
             </div>
