@@ -4,7 +4,7 @@ import {
     Route
 } from 'react-router-dom';
 import App from './App'
-import RegistrationPage from './pages/RegistrationPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 
 class AppRouter extends React.Component{
     render(){
@@ -13,7 +13,7 @@ class AppRouter extends React.Component{
                 <BrowserRouter>
                     <div>
                         <Route exact path='/' component={App}  />
-                        <Route path="/register" component={RegistrationPage} />
+                        <Route path="/product-details" component={ProductDetailsPage} />
                     </div>
                 </BrowserRouter>
             </div>
