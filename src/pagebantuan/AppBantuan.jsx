@@ -1,10 +1,10 @@
 import React from 'react';
 import { ListGroup, ListGroupItem, Container, Row, Col } from 'reactstrap';
-import '../assets/css/bantuanstyle.css';
+import '../assets/scss/_bantuanstyle.scss';
 
 const AppBantuan = (props) => {
   return (
-      <Container className="text-bantuan">
+      <Container className="bantuan-page styling">
       <h2 className="text-header-container">
           Ini adalah page bantuan
       </h2>

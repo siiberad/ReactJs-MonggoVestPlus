@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Container, Row, Col } from 'reactstrap';
-import '../assets/css/tentangkamistyle.css';
+import '../assets/scss/_tentangkamistyle.scss';
 
 const AppTentangKami = (props) => {
   return (
@@ -23,7 +23,7 @@ const AppTentangKami = (props) => {
         </CardBody>
       </Card>
       </Col>
-      <Col sm="4">
+      <Col sm="4" className="box-tentang">
       <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
@@ -34,7 +34,7 @@ const AppTentangKami = (props) => {
         </CardBody>
       </Card>
       </Col>
-      <Col sm="4">
+      <Col sm="4" className="box-tentang">
       <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
@@ -45,7 +45,7 @@ const AppTentangKami = (props) => {
         </CardBody>
       </Card>
       </Col>
-      <Col sm="6">
+      <Col sm="6" className="box-tentang">
       <Card className="cardbox2">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
@@ -56,7 +56,7 @@ const AppTentangKami = (props) => {
         </CardBody>
       </Card>
       </Col>
-      <Col sm="6">
+      <Col sm="6" className="box-tentang">
       <Card className="cardbox2">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >

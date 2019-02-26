@@ -10,7 +10,7 @@ const AppCaraKerja = (props) => {
     <Container className="container-carakerja">
     <hr></hr>
     <Row className = "row-card">
-    <Col sm="4">
+    <Col sm="3" className="col-card-carakerja">
       <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
@@ -21,7 +21,9 @@ const AppCaraKerja = (props) => {
         </CardBody>
       </Card>
       </Col>
-      <Col sm="4">
+    </Row>
+    <Row className = "row-card">
+      <Col sm="3" className="col-card-carakerja">
       <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
@@ -32,7 +34,22 @@ const AppCaraKerja = (props) => {
         </CardBody>
       </Card>
       </Col>
-      <Col sm="4">
+    </Row>
+    <Row className = "row-card">
+      <Col sm="3" className="col-card-carakerja">
+      <Card className="cardbox">
+        <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
+        <CardBody className="card-body" >
+          <CardTitle>Dinda</CardTitle>
+          {/* <CardSubtitle>Card subtitle</CardSubtitle>
+          <CardText>Rp. 40.000.000.00</CardText>
+          <Button className="bt-card" >Button</Button> */}
+        </CardBody>
+      </Card>
+       </Col>
+    </Row>
+    <Row className = "row-card">
+      <Col sm="3" className="col-card-carakerja">
       <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
         <CardBody className="card-body" >
