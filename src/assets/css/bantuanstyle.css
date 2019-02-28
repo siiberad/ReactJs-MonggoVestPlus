@@ -1,0 +1,16 @@
+
+.text-header-container {
+    margin-top: 20vh;
+    text-align: center;
+}
+
+.bantuan-page .styling {
+    position: relative;
+    /* padding-top: 20px;
+    margin-top: 80px; */
+}
+
+
+.text-detail {
+    text-align: justify;
+}

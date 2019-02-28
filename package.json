@@ -2,20 +2,23 @@
   "name": "binarplus",
   "version": "0.1.0",
   "private": true,
-  "proxy" :"http://localhost:8080",
+  "engines": {
+    "npm": "6.4.1",
+    "node": "v10.14.2"
+  },
   "dependencies": {
-    "availity-reactstrap-validation": "^2.5.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
     "node-sass": "^4.11.0",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2",
-    "react-redux": "^6.0.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-input-just-numbers": "^1.0.3",
+    "react-recaptcha-google": "^1.1.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.5",
+    "react-select": "^2.4.1",
     "reactstrap": "^7.1.0",
-    "redux": "^4.0.1",
-    "redux-form": "^8.1.0"
+    "store": "^2.0.12"
   },
   "scripts": {
     "start": "react-scripts start",
