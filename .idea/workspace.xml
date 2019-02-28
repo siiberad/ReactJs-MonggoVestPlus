@@ -19,10 +19,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/AppTrx.jsx" />
         <option value="$PROJECT_DIR$/src/pages/TrxPage.jsx" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/AppNavbar.jsx" />
+        <option value="$PROJECT_DIR$/src/AppRouter.jsx" />
       </list>
     </option>
   </component>
@@ -32,6 +34,7 @@
     <option name="width" value="1378" />
     <option name="height" value="733" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -39,27 +42,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="fullstack-web-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fullstack-web-frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fullstack-web-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fullstack-web-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fullstack-web-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fullstack-web-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -104,7 +87,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2705000" />
+    <option name="totallyTimeSpent" value="3356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -142,12 +125,16 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="250" height="632" key="Git.Branch.Popup" />
+    <state width="250" height="632" key="Git.Branch.Popup/1366.768" />
+    <state width="250" height="632" key="Git.Branch.Popup@1366.768" />
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/RegistrationPage" />
     <entry file="file://$PROJECT_DIR$/src/pages/TrxPage.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>

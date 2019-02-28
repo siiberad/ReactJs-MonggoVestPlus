@@ -4,7 +4,6 @@ import {
     Route
 } from 'react-router-dom';
 import App from './App'
-import RegistrationPage from './pages/RegistrationPage';
 import TentangKami from './pagetentangkami/TentangKami';
 import Bantuan from './pagebantuan/Bantuan';
 import CaraKerja from './pagecarakerja/CaraKerja';
