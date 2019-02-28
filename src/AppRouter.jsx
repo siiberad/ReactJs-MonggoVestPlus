@@ -3,7 +3,8 @@ import {
     BrowserRouter,
     Route
 } from 'react-router-dom';
-import App from './App'
+import App from './App';
+import TrxPage from './pages/TrxPage';
 
 class AppRouter extends React.Component{
     render(){
@@ -12,6 +13,7 @@ class AppRouter extends React.Component{
                 <BrowserRouter>
                     <div>
                         <Route exact path='/' component={App}  />
+                        <Route exact path='/transaction' component={TrxPage}  />
                     </div>
                 </BrowserRouter>
             </div>
