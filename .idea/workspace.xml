@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae1010c0-bb4c-404a-98b2-91e8297ece5f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/BankName.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/loggedIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/css/Trx.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/Trx.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppTrx.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppTrx.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/AppCarousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AppCarousel.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TrxPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TrxPage.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="ae1010c0-bb4c-404a-98b2-91e8297ece5f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +104,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2458000" />
+    <option name="totallyTimeSpent" value="2705000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
