@@ -9,6 +9,8 @@ import {
    } from 'reactstrap';
 import '../assets/css/stylenav.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import AppLoginModalBox from '../components/AppLoginModalBox';
+import AppLoginRegistState from './AppLoginRegistState';
 
 // const ListLink = (props) => (
 
@@ -72,7 +74,7 @@ class AppNavbar extends Component {
               <NavItem>
                 <Link className='nav-app' to='/bantuan'>Bantuan</Link>
               </NavItem>
-              <button id="bt-nav" to='/register'>Login</button>
+              <AppLoginRegistState/>
             </Nav>
           </Collapse>
         </Navbar>
