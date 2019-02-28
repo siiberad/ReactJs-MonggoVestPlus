@@ -8,22 +8,28 @@ import {
   NavItem,
    } from 'reactstrap';
 import '../assets/css/stylenav.css';
-import {Link, Router} from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import AppLoginModalBox from '../components/AppLoginModalBox';
+import AppLoginRegistState from './AppLoginRegistState';
 
 class AppNavbar extends Component {
-  constructor(props) {
-    super(props);
+  constructor(props, context) {
+    super(props, context);
 
-    this.toggle = this.toggle.bind(this);
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
     this.state = {
-      isOpen: false
+      show: false,
     };
   }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
+
+  handleClose() {
+    this.setState({ show: false });
+  }
+
+  handleShow() {
+    this.setState({ show: true });
   }
   render() {
     return (
@@ -47,7 +53,7 @@ class AppNavbar extends Component {
               <NavItem>
                 <Link className='nav-app' to='/'>Bantuan</Link>
               </NavItem>
-              <button id="bt-nav">Login</button>
+              <AppLoginRegistState/>
             </Nav>
           </Collapse>
         </Navbar>

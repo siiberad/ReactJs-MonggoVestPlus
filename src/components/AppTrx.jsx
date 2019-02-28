@@ -1,7 +1,6 @@
 import React from 'react';
-import { Col, Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import {  } from 'reactstrap';
 import "../assets/css/Trx.css"
+import { Col, Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import {Container} from'reactstrap';
 import axios from 'axios';
 import Select from 'react-select';
@@ -14,11 +13,11 @@ class AppTrx extends React.Component {
   constructor(props) {
     super(props);
     this.onProd = this.onProd.bind(this);
-    this.onLot = this.onLot.bind(this); 
+    this.onLot = this.onLot.bind(this);
     this.onRek = this.onRek.bind(this);
     this.onBankName = this.onBankName.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.handleChecked = this.handleChecked.bind(this);  
+    this.handleChecked = this.handleChecked.bind(this);
 
     this.state = {
         productModel: '',
@@ -63,11 +62,11 @@ onSubmit(e) {
         bankModel: parseInt(this.state.selectedOption.value, 10),
         noRekening: this.state.noRekening,
     }
-    
+
     axios
       .post('http://mgvplus.herokuapp.com/users/${userId}/transactions?productModel=${productId}', serverport)
       .then(res => console.log(res.data));
-    
+
       this.setState({
         productModel: '',
         lotTaken:'',
@@ -100,11 +99,11 @@ render() {
                 <Input
                     disabled="true"
                     type= 'text'
-                    className="form-control" 
+                    className="form-control"
                     value={this.state.productModel}
                     onChange={this.onProd}
                     >
-                </Input>      
+                </Input>
                 </Col>
               </FormGroup>
 
@@ -114,11 +113,11 @@ render() {
                 <Input
                     disabled="true"
                     type= 'text'
-                    className="form-control" 
+                    className="form-control"
                     value={this.state.lotTaken}
                     onChange={this.onLot}
                     >
-                </Input>      
+                </Input>
                 </Col>
               </FormGroup>
 
@@ -137,26 +136,26 @@ render() {
               <FormGroup row>
                 <Label sm={2}>Nomor Rekening</Label>
                 <Col sm={10}>
-                  <Input 
+                  <Input
                     placeholder="Masukkan Nomor Rekening Anda ..."
-                    className="form-control" 
+                    className="form-control"
                     value={this.state.noRekening}
-                    onChange={this.onRek} 
+                    onChange={this.onRek}
                     className="no-spinners"
-                    type="number"  
+                    type="number"
                     >
                   </Input>
                 </Col>
               </FormGroup>
-              
+
               <FormGroup check row>
                 <Label check sm={4}>
-                <Col sm={10}> 
-                <Input 
+                <Col sm={10}>
+                <Input
                     type="checkbox"
                     checked={this.state.check}
                     onChange={this.handleChecked}
-                    />{' '} 
+                    />{' '}
                     Check me out
                 </Col>
                 </Label>
@@ -176,5 +175,4 @@ render() {
     );
   }
 }
-
 export default AppTrx;
