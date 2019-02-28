@@ -4,17 +4,17 @@ import {
     CarouselItem,
     CarouselCaption
   } from 'reactstrap';
-import '../assets/css/bannerstyle.css';
+import '../assets/scss/_bannerstyle.scss';
 
 const items = [
   {
-    src: 'https://res.cloudinary.com/siiberad/image/upload/v1550222805/Image.jpg',
-    altText: 'Semua Orang Bisa Berternak',
-    caption: 'Kelola keuangan anda dengan instrumen investasi yang terjangkau dan rendah resiko'
+    src: 'https://previews.dropbox.com/p/thumb/AAUmMCCe_OzZKDlXoDYIY7lzZgFLiIsO_8CnIXZagCraIVkv1oU6jJi_xd_JiAZnWXi2eUQKD_5HYNvEM8vAZAu-4v1odVKv1-CiD7kCcYISc486aLNpxY4hS2SiMaCi9aNkb21JnGkDWLMmK_hjwMRxbVMazNwkaQ9Yc16GCdxETFLha8jqeyVMx2ckE5oQXAGaLPQ6cl30hFPtVAdI7tH0v8ehHmLgKmrEhb9PxHaXiy7LcjGSr5YhWFx_6AJ6EWc/p.jpeg?size_mode=5',
+    altText: <h1>Semua Orang Bisa Berternak</h1>,
+    caption: <text className="text-banner caption">Kelola keuangan anda dengan instrumen investasi yang terjangkau dan rendah resiko</text>
   }
 ];
 
-class AppCarousel extends Component {
+class AppBanner extends Component {
     constructor(props) {
         super(props);
         this.state = { activeIndex: 0 };
@@ -48,4 +48,4 @@ class AppCarousel extends Component {
   }
 
 
-export default AppCarousel;
+export default AppBanner;
