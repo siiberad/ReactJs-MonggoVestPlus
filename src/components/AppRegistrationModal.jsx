@@ -42,22 +42,27 @@ class AppRegistrationModal extends React.Component {
   submit(e) {
     e.preventDefault();
     axios
-      .post("http://mgvplus.herokuapp.com/api/register", {
+      .post("https://mgvplus.herokuapp.com/api/register", {
         userFullName: this.state.userFullName,
         userEmail: this.state.userEmail,
         userPassword: this.state.userPassword
       })
-      .then(function(response) {
+      .then(function (response) {
         console.log(response);
         if (response.status === 201) {
-          alert("Akun Anda telah berhasil dibuat");
+          alert("Akun Anda telah berhasil dibuat, silahkan cek e-mail Anda");
         } else {
-          alert("some error ocurred", response.status);
+          alert("telah terjadi error, mohon hubungi tim kami untuk mendapat bantuan", response.status);
         }
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
+      this.setState({
+        userFullName: "",
+        userEmail: "",
+        userPassword: ""
+      })
   }
 
   render() {
