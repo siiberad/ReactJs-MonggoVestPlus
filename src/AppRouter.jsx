@@ -4,10 +4,10 @@ import {
     Route
 } from 'react-router-dom';
 import App from './App'
-import RegistrationPage from './pages/RegistrationPage';
 import TentangKami from './pagetentangkami/TentangKami';
 import Bantuan from './pagebantuan/Bantuan';
 import CaraKerja from './pagecarakerja/CaraKerja';
+import TrxPage from './pages/TrxPage';
 
 class AppRouter extends React.Component{
     render(){
@@ -16,10 +16,10 @@ class AppRouter extends React.Component{
                 <BrowserRouter>
                     <div>
                         <Route exact path='/' component={App}  />
-                        <Route path="/register" component={RegistrationPage} />
                         <Route path='/tentangkami' component={TentangKami}  />
                         <Route path='/bantuan' component={Bantuan}  />
                         <Route path='/carakerja' component={CaraKerja}  />
+                        <Route exact path='/transaction' component={TrxPage}  />
                     </div>
                 </BrowserRouter>
             </div>
