@@ -7,7 +7,7 @@ import {
   Nav,
   NavItem,
    } from 'reactstrap';
-import '../assets/css/stylenav.css';
+import '../assets/scss/_navbarstyle.scss';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 // const ListLink = (props) => (

@@ -1,0 +1,102 @@
+
+
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.div-carakerja {
+    display: block;
+    max-width: 100%;
+    margin-top: 15vh;
+
+    .h2-header-card {
+        margin-top: 40px;
+       text-align: center;
+    }
+
+    .container-carakerja {
+        position: relative;
+        justify-content: center;
+        margin-bottom: 10vh;
+    }
+
+    .container-carakerja::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+    @media screen and (max-width: 992px) {
+        .cardbox {
+          width: 100%;
+          display: list-item;
+        }
+    }
+
+    @media screen and (max-width: 540px) {
+        .container-carakerja {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .cardbox {
+            width: 100%;
+            // margin: 45px !important;
+            display: inline-block;
+        }
+        .row-card {
+            display: inline-block;
+        }
+    }
+
+
+    .row-card {
+        
+        margin-top: 5vh;
+     }
+
+    //  .col-card-carakerja {
+    //     width: 100%;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     margin: auto;
+    //     border-radius: calc(.25rem - 1px);
+    //     border:0;
+    // }
+
+    .cardbox {
+        // width: 100%;
+        padding: 20px;
+        float: left;
+        display: block;
+        margin: auto;
+        border:0;
+        text-align: center;
+    }
+
+    // .bg-card {
+    //     border-radius: 100%;
+    //  }
+
+
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
