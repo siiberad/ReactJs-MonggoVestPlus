@@ -5,6 +5,7 @@ import AppFooter from '../components/AppFooter';
 import { Container, Row, Col } from 'reactstrap';
 import '../assets/scss/AppMain.scss';
 import AppBanner from './AppBanner';
+import AppIcon from './AppIcon';
 
 class HomePages extends React.Component{
     render(){
@@ -12,6 +13,7 @@ class HomePages extends React.Component{
             <div>
                 <AppNavbar/>
                 <AppBanner/>
+                <AppIcon/>
                 <h2 className="text-home" md="12">Instrumen Investasi Terpopuler</h2>
                 <AppCard/>
                 <div>

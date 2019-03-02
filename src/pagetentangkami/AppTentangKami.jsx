@@ -5,77 +5,59 @@ import '../assets/scss/_tentangkamistyle.scss';
 
 const AppTentangKami = (props) => {
   return (
-    <div>
-      <Container className="container-header-card">
-        <h2>Ini adalah page Tentang Kami</h2>
-        <hr></hr>
-      </Container>
-    <Container className="container-header-tentang">
+    <div className="div-tentangkami">
+      <h1>Tentang Kami</h1>
+    {/* <Container className="container-header-tentang">
+    <hr/>
     <Row className = "row-card">
-    <Col sm="4" className="box-tentang">
+    <Col sm="2" className="box-tentang">
       <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
-        <CardBody className="card-body" >
           <CardTitle>Teddy</CardTitle>
-          {/* <CardSubtitle>DKI Djakarta</CardSubtitle>
-          <CardText>Rp. 30.000.000.00</CardText>
-          <Button className="bt-card" >Button</Button> */}
-        </CardBody>
       </Card>
       </Col>
-      <Col sm="4" className="box-tentang">
+      <Col sm="2" className="box-tentang">
       <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
-        <CardBody className="card-body" >
           <CardTitle>Reza</CardTitle>
-          {/* <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Rp. 20.000.000.00</CardText>
-          <Button className="bt-card" >Button</Button> */}
-        </CardBody>
       </Card>
       </Col>
-      <Col sm="4" className="box-tentang">
+      <Col sm="2" className="box-tentang">
       <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
-        <CardBody className="card-body" >
           <CardTitle>Dinda</CardTitle>
-          {/* <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Rp. 40.000.000.00</CardText>
-          <Button className="bt-card" >Button</Button> */}
-        </CardBody>
       </Card>
       </Col>
-      <Col sm="6" className="box-tentang">
-      <Card className="cardbox2">
+      <Col sm="2" className="box-tentang">
+      <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
-        <CardBody className="card-body" >
           <CardTitle>Dita</CardTitle>
-          {/* <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Rp. 40.000.000.00</CardText>
-          <Button className="bt-card" >Button</Button> */}
-        </CardBody>
       </Card>
       </Col>
-      <Col sm="6" className="box-tentang">
-      <Card className="cardbox2">
+      <Col sm="2" className="box-tentang">
+      <Card className="cardbox">
         <CardImg className="bg-card" src="https://cdn-images-1.medium.com/max/1200/1*y03gw83Wj4BYk_sD75gNEA.png" alt="Card image cap" />
-        <CardBody className="card-body" >
           <CardTitle>Satria</CardTitle>
-          {/* <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>Rp. 40.000.000.00</CardText>
-          <Button className="bt-card" >Button</Button> */}
-        </CardBody>
       </Card>
       </Col>
       </Row>
-      </Container>
+      </Container> */}
       <Container className="text-detail">
       <hr></hr>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum similique vitae minima molestias maiores at, iure quae excepturi nobis. Consectetur, dolorem illo culpa minima at saepe nostrum error temporibus corporis!
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste minus consectetur modi incidunt impedit vel possimus harum unde nihil quos ut accusantium, aliquid blanditiis ullam dolores consequuntur esse. Quod.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores excepturi amet, cum atque perferendis explicabo, natus at autem rerum magnam ea laborum sequi corporis in eaque, consequuntur ab suscipit minima!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet nulla quas eius voluptatem deleniti, odio eum vitae minus dolore error delectus ratione sequi illum rerum, enim expedita voluptates necessitatibus cum.
+          Indonesia adalah negara yang mempunyai keberagaman yang luar biasa. Diversitas penduduk yang terbesar di seluruh penjuru, membuat kita seakan lupa betapa besarnya negara ini. 
+          Satu hal yang menarik bahwa persebaran penduduk di perkotaan dan pedesaan hampir serupa. Hal ini menandakan bahwa klasifikasi tempat tinggal masyarakat bukan menjadi hal yang utama. 
+          Jika kita berbicara tentang peternakan, pada hakikatnya swasembada lah yang kita harapkan. Perbandingan permintaan dan penawaran daging yang bernilai 1:3 (BPS, 2017), membuat pemerintah 
+          harus berlomba mencari daging sapi yang murah ke negeri-negeri tetangga. Memang ego dan preferensi sektor perkotaan maupun pedesaan, sedari dulu hanya membuat masalah baru yang berlarut saja. 
+          Seakan saling menyalahkan tanpa menggali solusi dari potensi yang ada.
+        </p>
+        <p>
+          Seringkali permasalahan yang ditemui oleh setiap peternak adalah tingginya production cost. Oleh karena masalah biaya, peternak sering melupakan sektor peternakan dan tidak memahami potensinya. 
+          Tindakan harus diambil, sebuah platform yang menghubungkan peternak dan penyedia modal adalah solusi yang kami tawarkan.
+        </p>
+        <p>
+          Monggovest hadir sebagai medium kolaborasi untuk satu visi yang sama. Kami percaya bahwa kesempatan untuk berkontribusi kepada bangsa adalah milik semua orang. Kami bertekad untuk memberi kesepatan 
+          yang sama kepada setiap individu. Dengan satu tujuan, eskalasi produksi peternakan.
         </p>
       </Container>
       </div>
