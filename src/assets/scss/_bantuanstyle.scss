@@ -1,18 +1,29 @@
 
 
 
-.text-header-container {
-    margin-top: 20vh;
-    text-align: center;
-}
 
-.bantuan-page .styling {
-    position: relative;
+
+.bantuan-page {
+    margin-top: 15vh;
     //  padding-top: 20px;
     // margin-top: 80px;
+
+    .text-header-container {
+        // margin-top: 20vh;
+        text-align:center;
+    }
+    .text-detail {
+        text-align: justify;
+    }
+    
+    .ul-style {
+        list-style-position: inside;
+    }
+    
+    p {
+        text-indent: 20px;
+    }
+    
 }
 
 
-.text-detail {
-    text-align: justify;
-}
