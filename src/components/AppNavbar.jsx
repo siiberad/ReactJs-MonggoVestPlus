@@ -7,9 +7,14 @@ import {
   Nav,
   NavItem,
    } from 'reactstrap';
-import '../assets/css/stylenav.css';
+import '../assets/scss/_navbarstyle.scss';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import AppLoginModalBox from '../components/AppLoginModalBox';
+import AppLoginRegistState from './AppLoginRegistState';
 
+// const ListLink = (props) => (
+
+// );
 
 class AppNavbar extends Component {
   constructor(props) {
@@ -19,7 +24,29 @@ class AppNavbar extends Component {
     this.state = {
       isOpen: false
     };
+
+    // this.navHiden = this.navHiden.bind(this);
+
+    
+  //   if (typeof window !== 'undefined') {
+  //     let prevScrollpos = window.pageYOffset;
+  //     window.onscroll = function () {
+  //       const maxScroll = document.body.clientHeight - window.innerHeight;
+  //       let currentScrollPos = window.pageYOffset;
+  //       if (
+  //         (maxScroll > 0 && prevScrollpos > currentScrollPos && prevScrollpos <= maxScroll)
+  //         || (maxScroll <= 0 && prevScrollpos > currentScrollPos)
+  //         || (prevScrollpos <= 0 && currentScrollPos <= 0)
+  //       ) {
+  //         document.getElementById("navbar").style.top = "0";
+  //       } else {
+  //         document.getElementById("navbar").style.top = "-5.0rem";
+  //       }
+  //       prevScrollpos = currentScrollPos;
+  //     }
+  //   }
   }
+
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
@@ -28,7 +55,7 @@ class AppNavbar extends Component {
   render() {
     return (
       <div>
-        <Navbar color="light" className="colornav" light expand="md" fixed='top' >
+        <Navbar id="navbar" color="light" className="colornav" light expand="md" fixed='top'>
           <NavbarBrand href="/" className="napbar">
           <img src="https://previews.dropbox.com/p/thumb/AAX3_4Qx6ZBsLrZMNgPZ5f_liU_etchcMUc3fRq5gcGv9cepWsN88XBLs2jO_HLJh2wLGLycREBd_9b-LSSo-AYRSVLWsE7knY6oJQPdf1d6EflpFZdqDFO44e5zNeLt6cXUeh5rs57fzgBaWjsrBIDCu_upK9jDMatFcwmHu4emi77Rgt-7KVCclurd0adi4wuq2fhqZkxx1QAiNzQDPWbxwFQRg_L0gfKF4WexmImp_VNwApWAWAgfMzlKE4Sg2jA/p.png?size_mode=5" height ="35" />
           </NavbarBrand>
@@ -39,15 +66,15 @@ class AppNavbar extends Component {
                 <Link className='nav-app' to='/'>Investasi</Link>
               </NavItem>
               <NavItem>
-                <Link className='nav-app' to='/'>Cara Kerja</Link>
+                <Link className='nav-app' to='/carakerja'>Cara Kerja</Link>
               </NavItem>
               <NavItem>
-                <Link className='nav-app' to='/'>Tentang Kami</Link>
+                <Link className='nav-app' to='/tentangkami'>Tentang Kami</Link>
               </NavItem>
               <NavItem>
-                <Link className='nav-app' to='/'>Bantuan</Link>
+                <Link className='nav-app' to='/bantuan'>Bantuan</Link>
               </NavItem>
-              <button id="bt-nav" to='/register'>Login</button>
+              <AppLoginRegistState/>
             </Nav>
           </Collapse>
         </Navbar>
