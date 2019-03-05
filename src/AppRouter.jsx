@@ -4,6 +4,7 @@ import {
     Route
 } from 'react-router-dom';
 import App from './App'
+import ProductDetailsPage from './pages/ProductDetailsPage';
 import TentangKami from './pagetentangkami/TentangKami';
 import Bantuan from './pagebantuan/Bantuan';
 import CaraKerja from './pagecarakerja/CaraKerja';
@@ -20,6 +21,7 @@ class AppRouter extends React.Component{
                         <Route path='/tentangkami' component={TentangKami}  />
                         <Route path='/bantuan' component={Bantuan}  />
                         <Route path='/carakerja' component={CaraKerja}  />
+                        <Route path="/product-details" component={ProductDetailsPage} />
                         <Route exact path='/transaction' component={TrxPage}  />
                         <Route exact path='/profile/edit' component={ProfileEditPage} />
                     </div>
