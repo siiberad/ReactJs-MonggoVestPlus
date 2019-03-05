@@ -7,6 +7,9 @@
     "node": "v10.14.2"
   },
   "dependencies": {
+<<<<<<< HEAD
+    "axios": "^0.18.0",
+=======
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
     "axios": "^0.18.0",
@@ -17,10 +20,18 @@
     "babel-plugin-named-asset-import": "^0.3.1",
     "babel-preset-react-app": "^7.0.1",
     "bfj": "6.1.1",
+>>>>>>> c0f8cd1b76d40a455c56916f3b097af1a59687d5
     "bootstrap": "^4.2.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
+<<<<<<< HEAD
+    "react-native-axios": "^0.17.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.5",
+    "reactrangeslider": "^3.0.6",
+    "reactstrap": "^7.1.0"
+=======
     "react-input-just-numbers": "^1.0.3",
     "react-recaptcha-google": "^1.1.1",
     "react-router-dom": "^4.3.1",
@@ -28,6 +39,7 @@
     "react-select": "^2.4.1",
     "reactstrap": "^7.1.0",
     "store": "^2.0.12"
+>>>>>>> c0f8cd1b76d40a455c56916f3b097af1a59687d5
   },
   "scripts": {
     "start": "react-scripts start",
