@@ -40,6 +40,7 @@ class AppRegistrationModal extends React.Component {
   }
 
   submit(e) {
+    localStorage.removeItem('USER_ID');
     e.preventDefault();
     axios
       .post("https://mgvplus.herokuapp.com/api/register", {
@@ -51,6 +52,7 @@ class AppRegistrationModal extends React.Component {
         console.log(response);
         if (response.status === 201) {
           alert("Akun Anda telah berhasil dibuat, silahkan cek e-mail Anda");
+          localStorage.setItem('USER_ID', response.data.userId)
         } else {
           alert("telah terjadi error, mohon hubungi tim kami untuk mendapat bantuan", response.status);
         }
@@ -67,17 +69,16 @@ class AppRegistrationModal extends React.Component {
 
   render() {
     return (
-      <div>
         <Modal
           isOpen={this.props.modalRegister}
           toggle={this.props.toggleClose}
           className={this.props.className}
         >
-          <ModalHeader toggle={this.props.toggleClose}>DAFTAR</ModalHeader>
+          <ModalHeader toggle={this.toggle}>DAFTAR</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.submit}>
               <FormGroup>
-                <Label>Nama Lengkap: </Label>
+                <Label>Nama Lengkap (Sesuai KTP): </Label>
                 <Input
                   type="text"
                   required="required"
@@ -128,7 +129,6 @@ class AppRegistrationModal extends React.Component {
             </a>
           </ModalFooter>
         </Modal>
-      </div>
     );
   }
 }
