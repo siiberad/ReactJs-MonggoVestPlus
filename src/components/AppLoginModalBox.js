@@ -38,6 +38,7 @@ class AppLoginModalBox extends React.Component {
   }
 
   submit(e) {
+    localStorage.removeItem('JWT_TOKEN');
     e.preventDefault();
     axios
       .post("https://mgvplus.herokuapp.com/api/login", {

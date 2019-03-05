@@ -9,35 +9,40 @@ import {
 import axios from "axios";
 import "../assets/css/formstyle.css";
 
+axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
+// axios.defaults.headers.common = {'Authorization': localStorage.getItem('JWT_TOKEN')}
+
 export default class AppProfileEdit extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      "userFullName": "",
-      "userEmail": "",
-      "userBirthDate": "",
-      "idCardType": "",
-      "idCardNumber": "",
-      "userAddress": "",
-      "userProvince": "",
-      "userContact": "",
-      "userIncomeSource": "",
-      "userIncome": "",
+      "userId": '',
+      "userFullName": '',
+      "userEmail": '',
+      "userPassword": '',
+      "userBirthDate": '',
+      "idCardType": '',
+      "idCardNumber": '',
+      "userAddress": '',
+      "userProvince": '',
+      "userContact": '',
+      "userIncomeSource": '',
+      "userIncome": '',
+      "confirmationToken": '',
+      "transactionModels": [],
+      "password": '',
+      "username": '',
+      "authorities": ''
     };
 
     this.state = {
       province: [],
-      users: [],
       errors: null
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.submit = this.submit.bind(this);
-  }
-
-  handleChangeProvince(selectedOption) {
-    this.setState({ selectedOption });
   }
 
   handleChange(event) {
@@ -51,7 +56,7 @@ export default class AppProfileEdit extends Component {
   }
 
   getUserProvince() {
-    axios.get('https://mgvplus.herokuapp.com/province')
+    axios.get('/province')
       .then(response => {
         this.setState({ province: response.data })
         console.log('data province', response.data)
@@ -62,9 +67,13 @@ export default class AppProfileEdit extends Component {
   }
 
   getUserDetails() {
-    axios.get('https://mgvplus.herokuapp.com/user/{userId}')
+    let token = localStorage.getItem('JWT_TOKEN')
+    // let config = {
+    //   headers: {'Authorization': token}}
+    let userId = localStorage.getItem('USER_ID')
+    axios.get(`/user/${userId}`, { headers: { "Authorization": token } })
       .then(response => {
-        this.setState({ users: response.data })
+        this.setState(response.data)
         console.log('data user', response.data)
       })
       .catch(err => {
@@ -78,11 +87,16 @@ export default class AppProfileEdit extends Component {
   }
 
   submit(e) {
+    let userId = localStorage.getItem('USER_ID')
+    let token = localStorage.getItem('JWT_TOKEN')
     e.preventDefault();
     axios
-      .put(`http://mgvplus.herokuapp.com/user/{userId}`, {
+      .put(`/user/${userId}`, {
+        userId: this.state.userId,
+        confirmationToken: this.state.confirmationToken,
         userFullName: this.state.userFullName,
         userEmail: this.state.userEmail,
+        userPassword: this.state.userPassword,
         userBirthDate: this.state.userBirthDate,
         idCardType: this.state.idCardType,
         idCardNumber: this.state.idCardNumber,
@@ -91,11 +105,16 @@ export default class AppProfileEdit extends Component {
         userContact: this.state.userContact,
         userIncomeSource: this.state.userIncomeSource,
         userIncome: this.state.userIncome,
-      })
+        transactionModels: this.state.transactionModels,
+        password: this.state.userPassword,
+        username: this.state.userEmail,
+        authorities: this.state.authorities
+      }, { headers: { "Authorization": token } })
       .then(function (response) {
         console.log(response);
-        if (response.status === 201) {
-          alert("Akun Anda telah berhasil dibuat");
+        if (response.status === 200) {
+          alert("Profil Anda telah berhasil disimpan");
+          this.props.history.push('/');
         } else {
           alert("some error ocurred", response.status);
         }
@@ -106,10 +125,11 @@ export default class AppProfileEdit extends Component {
   }
 
   render() {
-    const { province } = this.state;
+    const { province, users } = this.state;
     return (
       <div>
         <Container className="margin-form">
+          <h2 align='center'>Ubah Profil</h2>
           <Form onSubmit={this.submit}>
             <FormGroup>
               <Label>Nama Lengkap: </Label>
@@ -120,10 +140,7 @@ export default class AppProfileEdit extends Component {
                 value={this.state.userFullName}
                 placeholder="Nama lengkap Anda"
                 onChange={this.handleChange}
-              />{
-                this.state.users.map(users =>
-                  <div key={users.userId}> {users.userFullName} </div>
-                )}
+              ></Input>
             </FormGroup>
             <FormGroup>
               <Label>Email: </Label>
@@ -164,11 +181,10 @@ export default class AppProfileEdit extends Component {
             <FormGroup>
               <Label>Nomor Identitas: </Label>
               <Input
-                type="number"
-                className="no-spinners"
+                type="text"
                 name="idCardNumber"
                 value={this.state.idCardNumber}
-                placeholder="357xxxxxxxxxxxx"
+                placeholder="Masukkan Nomor KTP/SIM/Paspor"
                 onChange={this.handleChange}
               />
             </FormGroup>
@@ -230,21 +246,14 @@ export default class AppProfileEdit extends Component {
             <FormGroup>
               <Label>Jumlah Penghasilan per Bulan:</Label>
               <Input
-                type="select"
+                type="number"
+                step="500000" min="0" lang="id"
                 name="userIncome"
                 id="userIncome"
                 value={this.state.userIncome}
                 onChange={this.handleChange}
                 required="required"
               >
-                <option>Di Bawah Rp 5.000.000</option>
-                <option>Rp 5.000.000 — Rp 9.999.999</option>
-                <option>Rp 10.000.000 — Rp 19.999.999</option>
-                <option>Rp 20.000.000 — Rp 29.999.999</option>
-                <option>Rp 30.000.000 — Rp 39.999.999</option>
-                <option>Rp 40.000.000 — Rp 49.999.999</option>
-                <option>Rp 50.000.000 — Ke Atas </option>
-
               </Input>
             </FormGroup>
 
