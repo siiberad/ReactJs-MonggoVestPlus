@@ -69,7 +69,7 @@ class ModalProductInvestasi extends React.Component {
                   value={this.state.value}
                   onChange={this.handleChange}
                 >
-                  10
+                  0
                 </Input>
               </Col>
               <Col sm={9}>
@@ -86,15 +86,15 @@ class ModalProductInvestasi extends React.Component {
               </Col>
             </Row>
             {/* <SliderProductLot/> */}
-            Harga per lot <br />
-            Total Harga <br />
+            Harga per lot : Rp. 500.000,00 <br />
+            Total Harga : <br />
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>
               Lanjutkan
             </Button>{" "}
             <Button color="secondary" onClick={this.toggle}>
-              Cancel
+              Nanti saja
             </Button>
           </ModalFooter>
         </Modal>

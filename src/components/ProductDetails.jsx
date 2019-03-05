@@ -15,6 +15,12 @@ export default class ProductDetails extends Component {
     render() {
         return (
             <Container>
+                <div>
+                Kambing Saanen
+                </div>
+                <div>
+                Rp. 1.156.800.000,00
+                </div>
                 <Row>
                     <Col xs="6">
                         <CarouselProductDetail />
