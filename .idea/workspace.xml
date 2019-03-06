@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae1010c0-bb4c-404a-98b2-91e8297ece5f" name="Default Changelist" comment="" />
+    <list default="true" id="ae1010c0-bb4c-404a-98b2-91e8297ece5f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,30 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="25" selection-end-column="88" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="13" selection-end-line="33" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="493">
+              <caret line="39" column="13" selection-end-line="39" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -51,7 +34,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="tedy/trxPage" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
   </component>
@@ -80,13 +63,17 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+      <pane id="ProjectPane">
+        <subPane>
           <expand>
             <path>
-              <item name="fullstack-web-frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="fullstack-web-frontend" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+              <item name="fullstack-web-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fullstack-web-frontend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fullstack-web-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fullstack-web-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fullstack-web-frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -94,14 +81,15 @@
               <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
-              <item name="fullstack-web-frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="fullstack-web-frontend" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="fullstack-web-frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fullstack-web-frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -150,12 +138,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4027000" />
-    <option name="totallyTimeSpent" value="3701000" />
+    <option name="totallyTimeSpent" value="4433000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15204236" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -174,8 +160,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.37244898" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3962585" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.9489796" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
@@ -192,9 +177,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="252" height="634" key="Git.Branch.Popup" />
-    <state width="252" height="634" key="Git.Branch.Popup/1366.768" />
-    <state width="252" height="634" key="Git.Branch.Popup@1366.768" />
+    <state width="258" height="640" key="Git.Branch.Popup" />
+    <state width="258" height="640" key="Git.Branch.Popup/1366.768" />
+    <state width="258" height="640" key="Git.Branch.Popup@1366.768" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -222,21 +207,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="25" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" selection-end-line="33" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="493">
+          <caret line="39" column="13" selection-end-line="39" selection-end-column="25" />
         </state>
       </provider>
     </entry>
