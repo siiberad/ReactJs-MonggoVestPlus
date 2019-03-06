@@ -48,8 +48,9 @@
     /* position: absolute; */
     border-radius: 40px;
     padding: 3px 15px;
+    margin-left: 10px;
     background-color: transparent;
-    border: 2px solid white;
+    border: 1px solid white;
     text-align: center;
     color: white;
     text-decoration: none;
@@ -62,6 +63,14 @@
         background-color: #ffffff;
         color: #0A3565;
     }
+}
+
+#bt-search {
+    border-radius: 100vh;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 

@@ -189,12 +189,12 @@ export default class AppProfileEdit extends Component {
               />
             </FormGroup>
             <FormGroup>
-              <Label>Alamat (sesuai KTP): </Label>
+              <Label>Alamat (sesuai Kartu Identitas): </Label>
               <Input
                 type="text"
                 name="userAddress"
                 value={this.state.userAddress}
-                placeholder="Nama Jalan, Kelurahan, Kecamatan, Kota/Kabupaten, Kodepos"
+                placeholder="Masukkan Alamat Sesuai Kartu Identitas Anda"
                 onChange={this.handleChange}
               />
             </FormGroup>
