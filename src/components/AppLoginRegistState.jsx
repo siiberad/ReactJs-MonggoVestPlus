@@ -17,7 +17,7 @@ export default class AppLoginRegistState extends Component {
 
   toggle() {
     this.setState(prevState => ({
-      modalLogin: !prevState.modalLogin
+      modalLogin: !prevState.modalLogin,
     }));
   }
 

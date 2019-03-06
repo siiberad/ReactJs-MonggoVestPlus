@@ -83,9 +83,9 @@ canBeSubmitted() {
 }
 
 render() {
-    if (!loggedIn()) {
-    return <Redirect to="/" />
-    }
+    // if (!loggedIn()) {
+    // return <Redirect to="/" />
+    // }
     const isEnabled = this.canBeSubmitted();
     const { selectedOption } = this.state;
     return (
