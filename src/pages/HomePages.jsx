@@ -5,7 +5,8 @@ import AppFooter from '../components/AppFooter';
 import { Container, Row, Col } from 'reactstrap';
 import '../assets/scss/AppMain.scss';
 import AppBanner from './AppBanner';
-import AllProductButton from '../components/AllProductButton';
+import {Link} from 'react-router-dom';
+
 
 class HomePages extends React.Component{
     render(){
@@ -15,11 +16,11 @@ class HomePages extends React.Component{
                 <AppBanner/>
                 <h2 className="text-home" md="12">Instrumen Investasi Terpopuler</h2>
                 <AppCard/>
-                <AllProductButton/>
+                
                 <div>
                     <Container>
                         <Row>
-                            <a href="#" className="btn btn-white btn-animated">Lihat Lebih Banyak</a>
+                            <a href="#" className="btn btn-white btn-animated"><Link to="/allproduct">TAMPILKAN LEBIH BANYAK</Link></a>
                         </Row>
                     </Container>
                 </div>
