@@ -8,18 +8,18 @@ import options from "./BankName";
 import loggedIn from "../helpers/loggedIn"
 import { Redirect } from 'react-router-dom';
 
-
 class AppTrx extends React.Component {
   constructor(props) {
     super(props);
-    this.onProd = this.onProd.bind(this);
     this.onLot = this.onLot.bind(this);
     this.onRek = this.onRek.bind(this);
     this.onBankName = this.onBankName.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
+    
 
     this.state = {
+        userId: '',
         productModel: '',
         lotTaken:'',
         noRekening: '',
@@ -29,11 +29,6 @@ class AppTrx extends React.Component {
     }
 }
 
-onProd(productModel) {
-    this.setState({
-      productModel: productModel.target.value
-      });
-}
 onLot(lotTaken) {
   this.setState({
     lotTaken: lotTaken.target.value
@@ -54,26 +49,35 @@ handleChecked = () => {
   });
 }
 
+componentDidMount() {
+  let productId = localStorage.getItem('JWT_TOKEN')
+  axios.get(`https://mgvplus.herokuapp.com/products/${productId}`).then(response => {
+      const productName = response.data.productName;
+      const productPrice = response.data.productPrice;
+      this.setState({productName, productPrice});
+  });
+  localStorage.getItem('JWT_TOKEN')
+}
+
 onSubmit(e) {
+    let userId = localStorage.getItem('USER_ID')
+    let productModel = localStorage.getItem('PRODUCT_ID')
+    let bankModel = parseInt(this.state.selectedOption.value, 10)
+    let token = localStorage.getItem('JWT_TOKEN')
+    console.log(userId, token)
     e.preventDefault();
-    const serverport = {
-        productModel: parseInt(this.state.productModel, 10),
-        lotTaken: parseInt(this.state.lotTaken, 10),
-        bankModel: parseInt(this.state.selectedOption.value, 10),
-        noRekening: this.state.noRekening,
-    }
-
-    axios
-      .post('http://mgvplus.herokuapp.com/users/${userId}/transactions?productModel=${productId}', serverport)
+    axios.post(`https://mgvplus.herokuapp.com/user/${userId}/transactions?productModel=${productModel}&bankModel=${bankModel}`, 
+    {
+    lotTaken: parseInt(this.state.lotTaken, 10),
+    noRekening: this.state.noRekening 
+    }, 
+    { headers: { "Authorization": token } })
       .then(res => console.log(res.data));
-
       this.setState({
-        productModel: '',
-        lotTaken:'',
         noRekening: '',
-        bankModel: '',
         selectedOption: null,
-        check: false
+        lotTaken: '',
+        check: false,
       });
 }
 
@@ -94,14 +98,26 @@ render() {
             <Form onSubmit={this.onSubmit}>
 
               <FormGroup row>
-                <Label sm={2}>Product</Label>
+                <Label sm={2}>Nama Produk</Label>
                 <Col sm={10}>
                 <Input
                     disabled="true"
                     type= 'text'
                     className="form-control"
-                    value={this.state.productModel}
-                    onChange={this.onProd}
+                    placeholder={this.state.productName}
+                    >
+                </Input>
+                </Col>
+              </FormGroup>
+
+              <FormGroup row>
+                <Label sm={2}>Harga Produk</Label>
+                <Col sm={10}>
+                <Input
+                    disabled="true"
+                    type= 'text'
+                    className="form-control"
+                    placeholder={this.state.productPrice}
                     >
                 </Input>
                 </Col>
@@ -111,7 +127,7 @@ render() {
                 <Label sm={2}>Lot Diambil</Label>
                 <Col sm={10}>
                 <Input
-                    disabled="true"
+                    // disabled="true"
                     type= 'text'
                     className="form-control"
                     value={this.state.lotTaken}
