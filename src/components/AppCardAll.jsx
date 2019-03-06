@@ -23,7 +23,7 @@ class AppCardAll extends Component{
       }
 
     componentDidMount(){
-             axios.get("http://mgvplus.herokuapp.com/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=19")
+             axios.get("https://mgvplus.herokuapp.com/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=19")
             .then(response =>
               response.data.content.map(product => ({
                   id: `${product.productId}` ,
