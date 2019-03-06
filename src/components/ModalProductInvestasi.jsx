@@ -9,6 +9,9 @@ import {
   Col,
   Input
 } from "reactstrap";
+import {
+  Link
+} from "react-router-dom";
 
 class ModalProductInvestasi extends React.Component {
   constructor(props) {
@@ -91,7 +94,9 @@ class ModalProductInvestasi extends React.Component {
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.toggle}>
+            <Link to="/transaction">
               Lanjutkan
+            </Link>
             </Button>{" "}
             <Button color="secondary" onClick={this.toggle}>
               Nanti saja
