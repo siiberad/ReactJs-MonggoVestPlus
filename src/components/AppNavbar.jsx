@@ -9,6 +9,8 @@ import {
    } from 'reactstrap';
 import '../assets/scss/_navbarstyle.scss';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import AppLoginModalBox from '../components/AppLoginModalBox';
+import AppLoginRegistState from './AppLoginRegistState';
 
 
 class AppNavbar extends Component {
@@ -69,12 +71,12 @@ class AppNavbar extends Component {
               <NavItem>
                 <Link className='nav-app' to='/bantuan'>Bantuan</Link>
               </NavItem>
-              <button id="bt-nav" to='/register'>Login</button>
-              <button id="bt-search" to='/search'>
-                <Link to='/search'>
-                  <img src="https://cdn.pixabay.com/photo/2017/03/19/03/48/material-icon-2155442_1280.png" height="35" />
-                </Link>
-              </button>
+              <AppLoginRegistState/>
+              {/*<button id="bt-search" to='/search'>*/}
+                {/*<Link to='/search'>*/}
+                  {/*<img src="https://cdn.pixabay.com/photo/2017/03/19/03/48/material-icon-2155442_1280.png" height="35" />*/}
+                {/*</Link>*/}
+              {/*</button>*/}
             </Nav>
           </Collapse>
         </Navbar>
