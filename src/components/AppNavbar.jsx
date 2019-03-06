@@ -12,9 +12,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import AppLoginModalBox from '../components/AppLoginModalBox';
 import AppLoginRegistState from './AppLoginRegistState';
 
-// const ListLink = (props) => (
-
-// );
 
 class AppNavbar extends Component {
   constructor(props) {
@@ -57,7 +54,7 @@ class AppNavbar extends Component {
       <div>
         <Navbar id="navbar" color="light" className="colornav" light expand="md" fixed='top'>
           <NavbarBrand href="/" className="napbar">
-          <img src="https://previews.dropbox.com/p/thumb/AAX3_4Qx6ZBsLrZMNgPZ5f_liU_etchcMUc3fRq5gcGv9cepWsN88XBLs2jO_HLJh2wLGLycREBd_9b-LSSo-AYRSVLWsE7knY6oJQPdf1d6EflpFZdqDFO44e5zNeLt6cXUeh5rs57fzgBaWjsrBIDCu_upK9jDMatFcwmHu4emi77Rgt-7KVCclurd0adi4wuq2fhqZkxx1QAiNzQDPWbxwFQRg_L0gfKF4WexmImp_VNwApWAWAgfMzlKE4Sg2jA/p.png?size_mode=5" height ="35" />
+          <img src="https://res.cloudinary.com/monggovestplus/image/upload/v1551762164/logomonggovest.png" height ="35" />
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -75,6 +72,11 @@ class AppNavbar extends Component {
                 <Link className='nav-app' to='/bantuan'>Bantuan</Link>
               </NavItem>
               <AppLoginRegistState/>
+              {/*<button id="bt-search" to='/search'>*/}
+                {/*<Link to='/search'>*/}
+                  {/*<img src="https://cdn.pixabay.com/photo/2017/03/19/03/48/material-icon-2155442_1280.png" height="35" />*/}
+                {/*</Link>*/}
+              {/*</button>*/}
             </Nav>
           </Collapse>
         </Navbar>
