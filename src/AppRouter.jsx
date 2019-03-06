@@ -8,6 +8,7 @@ import TentangKami from './pagetentangkami/TentangKami';
 import Bantuan from './pagebantuan/Bantuan';
 import CaraKerja from './pagecarakerja/CaraKerja';
 import TrxPage from './pages/TrxPage';
+import AllProductPage from './pages/AllProductPage';
 
 class AppRouter extends React.Component{
     render(){
@@ -20,6 +21,7 @@ class AppRouter extends React.Component{
                         <Route path='/bantuan' component={Bantuan}  />
                         <Route path='/carakerja' component={CaraKerja}  />
                         <Route exact path='/transaction' component={TrxPage}  />
+                        <Route exact path='/allproduct' component={AllProductPage}  />
                     </div>
                 </BrowserRouter>
             </div>
