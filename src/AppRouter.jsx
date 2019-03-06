@@ -10,6 +10,8 @@ import Bantuan from './pagebantuan/Bantuan';
 import CaraKerja from './pagecarakerja/CaraKerja';
 import TrxPage from './pages/TrxPage';
 import ProfileEditPage from './pages/ProfileEditPage';
+import Search from './searchpage/Search';
+import AppResults from './searchpage/AppResults';
 
 class AppRouter extends React.Component{
     render(){
@@ -24,6 +26,8 @@ class AppRouter extends React.Component{
                         <Route path="/product-details" component={ProductDetailsPage} />
                         <Route exact path='/transaction' component={TrxPage}  />
                         <Route exact path='/profile/edit' component={ProfileEditPage} />
+                        <Route exact path='/search' component={Search} />
+                        <Route exact path='/results' component={AppResults} />
                     </div>
                 </BrowserRouter>
             </div>
