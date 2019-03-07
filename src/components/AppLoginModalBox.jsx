@@ -1,5 +1,6 @@
 import React from "react";
-import { Button,
+import {
+  Button,
   Modal,
   ModalHeader,
   ModalBody,
@@ -7,12 +8,81 @@ import { Button,
   FormGroup,
   Form,
   Label,
-  Input} from "reactstrap";
+  Input,
+  Col
+} from "reactstrap";
+import store from 'store';
+import axios from "axios";
+import loggedIn from '../helpers/loggedIn';
 import "../assets/css/stylenav.css";
+import { request } from "http";
 
 class AppLoginModalBox extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      userEmail: "",
+      userPassword: "",
+      check: false,
+      hidden: true
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleChecked = this.handleChecked.bind(this);
+    this.submit = this.submit.bind(this);
+  }
+
+  handleChange(event) {
+    let name = event.target.name;
+    let value = event.target.value;
+    // console.log(name, value);
+    let data = {};
+    data[name] = value;
+    this.setState(data);
+  }
+
+  handleChecked = () => {
+    this.setState({
+      check: !this.state.check,
+      hidden: !this.state.hidden
+    });
+  }
+
+  submit(e) {
+    e.preventDefault();
+    axios
+      // .post("http://localhost:8080/api/login", {
+      .post("https://mgvplus.herokuapp.com/api/login", {
+        userEmail: this.state.userEmail,
+        userPassword: this.state.userPassword
+      })
+      .then(function (response) {
+        console.log(response);
+        if (response.status === 200) {
+          alert('Anda berhasil masuk. Selamat Datang di Monggovestplus');
+          localStorage.setItem('JWT_TOKEN', response.data.token)
+        } else if (response.status === 401) {
+          alert("Akun Anda belum teraktivasi, silahkan cek e-mail yang telah didaftarkan sebelumnya");
+        } else {
+          alert("telah terjadi error, mohon hubungi tim kami untuk mendapat bantuan", response.status);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    this.setState({
+      userEmail: "",
+      userPassword: ""
+    })
+    store.set('loggedIn', true);
+    const token = localStorage.getItem('JWT_TOKEN')
+    const tokenParts = token.split('.');
+    const encodedPayload = tokenParts[1];
+    const rawPayload = atob(encodedPayload);
+    const user = JSON.parse(rawPayload);
+    localStorage.setItem('USER_ID', user.userId)
+    console.log('userId yang login', localStorage.getItem('USER_ID'))
   }
 
   render() {
@@ -23,25 +93,32 @@ class AppLoginModalBox extends React.Component {
         className={this.props.className}
       >
         <ModalHeader toggle={this.toggle}>MASUK</ModalHeader>
-          <ModalBody>
-                <Form align="stretch" onSubmit={this.handleSubmit}>
-                <FormGroup>
-                Email:<br/>
-                    <Input type="text" name="userEmail" placeholder="Masukkan Email Anda"/>
-                </FormGroup>
-                <FormGroup>
-                Password:<br/>
-                    <Input type="password" name="userPassword" placeholder="Masukkan Password " />
-                </FormGroup>                       
-                </Form>
-                <div align="center">
-                <Button  color="primary" onClick={this.toggle}>Lanjutkan</Button>{' '}
-                </div>
-          </ModalBody>
-          <ModalFooter>Belum punya akun?<a href="#" onClick={this.props.toggleClose}>
-              &nbsp;Masuk di sini
+        <ModalBody>
+          <Form align="stretch" onSubmit={this.submit}>
+            <FormGroup>
+              Email:<br />
+              <Input type="text" name="userEmail" value={this.state.userEmail} onChange={this.handleChange} placeholder="Masukkan Email Anda" />
+            </FormGroup>
+            <FormGroup>
+              <Label>Password: </Label>
+              <Input type={this.state.hidden ? "password" : "text"} required="required" name="userPassword" value={this.state.userPassword} placeholder="Kata Sandi Anda" onChange={this.handleChange}
+              />
+              <Label check sm={12}>
+                <Col sm={12}>
+                  <Input type="checkbox" checked={this.state.check} onChange={this.handleChecked} />lihat kata sandi
+                </Col>
+              </Label>
+            </FormGroup>
+
+            <div align="center">
+              <Button color="submit" value="Submit" className="btn btn-primary">Masuk</Button>{" "}
+            </div>
+          </Form>
+        </ModalBody>
+        <ModalFooter>Belum punya akun?<a href="#" onClick={this.props.toggleClose}>
+          &nbsp;Daftar di sini
             </a></ModalFooter>
-        </Modal>
+      </Modal>
     );
   }
 }
