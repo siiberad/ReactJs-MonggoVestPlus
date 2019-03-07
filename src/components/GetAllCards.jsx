@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody,
 CardTitle, CardSubtitle, Button } from 'reactstrap';
 import '../assets/scss/_cardstyle.scss';
+import {Link} from 'react-router-dom';
 
 class GetAllCards extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class GetAllCards extends Component {
   }
   
   render () {
-    let { name, province, image, harga }  = this.props.product;
+    let { id, name, province, image, harga }  = this.props.product;
     return (
       <div>
         <Card className="card-product animation">
@@ -18,7 +19,7 @@ class GetAllCards extends Component {
             <CardTitle>{name}</CardTitle>
             <CardSubtitle>{province}</CardSubtitle>
             <CardText>{harga}</CardText>
-            <Button >Lihat</Button>
+            <Button ><Link to={{pathname : `/product-details/${id}` }} > Lihat</Link></Button>
           </CardBody>
         </Card>
       </div>

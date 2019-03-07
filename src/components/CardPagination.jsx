@@ -22,7 +22,7 @@ class CardPagination extends React.Component {
         this.setState((prevState) => ({currentPage: (prevState.currentPage + 1)}))
     }
     componentDidMount(){
-      axios.get("http://localhost:8080/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=6")
+      axios.get("http://localhost:8080/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=ASC&page=0&size=20")
       .then(response =>
         response.data.map(halaman => ({
           id: `${halaman.content.productId}` ,

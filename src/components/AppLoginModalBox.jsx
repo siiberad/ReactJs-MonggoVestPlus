@@ -57,19 +57,21 @@ class AppLoginModalBox extends React.Component {
         userEmail: this.state.userEmail,
         userPassword: this.state.userPassword
       })
-      .then(function (response) {
-        console.log(response);
+      .then( (response) => {
+        console.log(response, "the response");
         if (response.status === 200) {
           alert('Anda berhasil masuk. Selamat Datang di Monggovestplus');
           localStorage.setItem('JWT_TOKEN', response.data.token)
-        } else if (response.status === 401) {
-          alert("Akun Anda belum teraktivasi, silahkan cek e-mail yang telah didaftarkan sebelumnya");
-        } else {
-          alert("telah terjadi error, mohon hubungi tim kami untuk mendapat bantuan", response.status);
+          this.props.toggle()
         }
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(error, "the error");
+        if (error.response.status === 401){
+          alert("Akun Anda belum teraktivasi, silahkan cek e-mail yang telah didaftarkan sebelumnya");
+        } else {
+          alert("telah terjadi error, mohon hubungi tim kami untuk mendapat bantuan", error.response.status);
+        }
       });
     this.setState({
       userEmail: "",

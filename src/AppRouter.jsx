@@ -24,12 +24,14 @@ class AppRouter extends React.Component{
                         <Route path='/tentangkami' component={TentangKami}  />
                         <Route path='/bantuan' component={Bantuan}  />
                         <Route path='/carakerja' component={CaraKerja}  />
-                        <Route path="/product-details" component={ProductDetailsPage} />
+                        <Route path="/product-details/1" component={ProductDetailsPage} />
                         <Route path='/transaction' component={TrxPage}  />
                         <Route exact path='/profile/edit' component={ProfileEditPage} />
                         <Route exact path='/search' component={Search} />
                         <Route exact path='/results' component={AppResults} />
                         <Route exact path='/allproduct' component={AllProductPage}  />
+                        
+                        
                     </div>
                 </BrowserRouter>
             </div>
