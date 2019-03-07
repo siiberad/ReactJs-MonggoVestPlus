@@ -70,12 +70,10 @@ class AppRegistrationModal extends React.Component {
         console.log(response);
         if (response.status === 201) {
           alert("Akun Anda telah berhasil dibuat, silahkan cek e-mail Anda");
-          // localStorage.setItem('USER_ID', response.data.userId)
-        } else {
-          alert("telah terjadi error, mohon hubungi tim kami untuk mendapat bantuan", response.status);
         }
       })
       .catch(function (error) {
+        alert("telah terjadi error, mohon hubungi tim kami untuk mendapat bantuan", error.response.status);
         console.log(error);
       });
     this.setState({
