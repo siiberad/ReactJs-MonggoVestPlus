@@ -41,7 +41,7 @@ class GroupingDropDown extends React.Component {
 
         return(
           
-          <Col sm={{size:5,offset:4}}>  
+          <Col sm={{size:7,offset:4}}>  
           <Select
               value={selectedOption}
               onChange={this.onProvinceName}
