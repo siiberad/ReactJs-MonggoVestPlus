@@ -50,23 +50,26 @@ handleChecked = () => {
 }
 
 componentDidMount() {
-  let productId = localStorage.getItem('JWT_TOKEN')
-  axios.get(`https://mgvplus.herokuapp.com/products/${productId}`).then(response => {
+  axios.get(`https://mgvplus.herokuapp.com/products/3`).then(response => {
       const productName = response.data.productName;
       const productPrice = response.data.productPrice;
       this.setState({productName, productPrice});
   });
-  localStorage.getItem('JWT_TOKEN')
 }
 
 onSubmit(e) {
-    let userId = localStorage.getItem('USER_ID')
-    let productModel = localStorage.getItem('PRODUCT_ID')
+    const token = localStorage.getItem('JWT_TOKEN')
+    const tokenParts = token.split('.');
+    const encodedPayload = tokenParts[1];
+    const rawPayload = atob(encodedPayload);
+    const user = JSON.parse(rawPayload);    
+    const userId = user.userId
+    
+    
     let bankModel = parseInt(this.state.selectedOption.value, 10)
-    let token = localStorage.getItem('JWT_TOKEN')
-    console.log(userId, token)
+  
     e.preventDefault();
-    axios.post(`https://mgvplus.herokuapp.com/user/${userId}/transactions?productModel=${productModel}&bankModel=${bankModel}`, 
+    axios.post(`https://mgvplus.herokuapp.com/users/${userId}/transactions?productModel=3&bankModel=${bankModel}`, 
     {
     lotTaken: parseInt(this.state.lotTaken, 10),
     noRekening: this.state.noRekening 
