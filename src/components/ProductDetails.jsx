@@ -21,6 +21,7 @@ export default class ProductDetails extends Component {
     //     localStorage.getItem('JWT_TOKEN')
     //   }
     }
+    
 
     render() {
         return (
