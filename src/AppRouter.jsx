@@ -13,6 +13,9 @@ import AllProductPage from './pages/AllProductPage';
 import ProfileEditPage from './pages/ProfileEditPage';
 import Search from './searchpage/Search';
 import AppResults from './searchpage/AppResults';
+import AppLoginRegistState from './components/AppLoginRegistState';
+import HomePages from './pages/HomePages';
+import Investasi from './pageinvestasi/Investasi';
 
 class AppRouter extends React.Component{
     render(){
@@ -24,12 +27,15 @@ class AppRouter extends React.Component{
                         <Route path='/tentangkami' component={TentangKami}  />
                         <Route path='/bantuan' component={Bantuan}  />
                         <Route path='/carakerja' component={CaraKerja}  />
+                        <Route exact path='/allproduct' component={AllProductPage}  />
                         <Route path="/product-details" component={ProductDetailsPage} />
                         <Route path='/transaction' component={TrxPage}  />
-                        <Route exact path='/profile/edit' component={ProfileEditPage} />
-                        <Route exact path='/search' component={Search} />
-                        <Route exact path='/results' component={AppResults} />
-                        <Route exact path='/allproduct' component={AllProductPage}  />
+                        <Route path='/profile/edit' component={ProfileEditPage} />
+                        <Route path='/search' component={Search} />
+                        <Route path='/results' component={AppResults} />
+                        <Route path='/loginregister' component={AppLoginRegistState} />
+                        <Route path='/homepage' component={HomePages} />
+                        <Route path='/investasi' component={Investasi} />
                     </div>
                 </BrowserRouter>
             </div>

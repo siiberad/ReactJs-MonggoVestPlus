@@ -1,59 +1,56 @@
 import React from 'react';
-import { Button, Form, FormGroup, Label, Input, Container, Link, Card, CardBody, CardImg,CardTitle, CardSubtitle, CardText} from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Container, NavItem,
+    Card, CardBody, CardImg,CardTitle, CardSubtitle, CardText} from 'reactstrap';
+import { Link } from 'react-router-dom';
 import { withLastLocation, LastLocationProvider } from 'react-router-last-location';
 import FilterResults from 'react-filter-search';
 import '../assets/scss/_searchstyle.scss';
 import axios from 'axios';
-import AppResults from './AppResults';
+// import SearchResults from '../searchpage/fungsi';
 
 class AppSearch extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             hasil:[],
-            query:''
+            productName:''
         }
         this.handleChange = this.handleChange.bind(this);
     }
 
-    // componentWillMount(){
-    //     axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
-    //     .then(res => {
-    //         const messages = hasil.data
-    //         console.log('isi willMount', this.state.messages)
-    //         this.setState({
-    //             messages:[...messages.content]
-    //         })
-    //     })
-        
-    // };
-
-    componentDidMount() {
-        axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
-        .then (res => {
-            this.setState({hasil: res.data.content})
-            console.log("uh shi up", this.state.hasil)
-        })
-    };
-
     componentWillMount(){
         axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
-        .then (res => {
+        .then(res => {
             this.setState({hasil: res.data.content})
-            console.log("nanik", this.state.hasil)
         })
-    };
+    }
 
     handleChange = event => {
         const { value } = event.target;
         this.setState({ value });
-        // console.log('ini value', this.state.value)
     };
-
     
 
+
+    componentDidMount() {
+        axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
+        .then (res => {
+            const productName = res.data.productName;
+            this.setState({hasil: res.data.content , productName})
+            console.log("uh shi up", this.state.hasil)
+        })
+    };
+
+    // onSubmit(e) {
+    //     let productName = localStorage.getItem('PRODUCT_NAME')
+    //     console.log(productName)
+    // axios.post(`https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=${producName}&orderBy=productId&page=0&size=30`)
+    // }
+
   render() {
-        const { hasil, value } = this.state;
+   
+    const { hasil } = this.state;
+    console.log('nni korewa',hasil)
     return (
         <div className="box-size-search">
             <Container className="search-all">
@@ -64,28 +61,48 @@ class AppSearch extends React.Component {
                         <Label className="label-search" for="search-web" hidden>Search</Label>
                             <Input className="input-search"
                             type="search" 
-                            value={value} onChange={this.handleChange} 
+                            value={hasil} 
+                            onChange={this.handleChange} 
                             name="search" 
                             id="search-web" 
                             placeholder="Search" 
                             />
-                            {/* <AppResults 
-                                value={value}
-                                hasil={hasil}
-                                renderResults={results => (
-                                    <div>
-                                        {results.map(el => (
-                                            <div>
-                                                <span>{el.productName}</span>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )}
-                            /> */}
+                            <hr/>
+                            <div>
+                                {/* <SearchResults
+                                    value={value}
+                                    hasil={hasil}
+                                    renderResults={res => (
+                                        <div style={{ marginTop: '16px' }}>
+                                            {res.map(({ hasil }, i) =>(
+                                                <div 
+                                                    key={i}
+                                                    style={{
+                                                        backgroundColor: '#f7f7f7',
+                                                        marginBottom: '8px',
+                                                        borderRadius:'4px',
+                                                        padding:'16px',
+                                                        alignSelf:'start',
+                                                        width:'100%'
+                                                    }}
+                                                    >
+                                                    <span>{hasil.productName}</span>
+                                                    <img src={hasil.productImage1} alt={hasil.productId}/>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                /> */}
+                                {/* <pre>
+                                    <code></code>
+                                </pre> */}
+                            </div>
                                 
                   </FormGroup>
                     <div className="div-kembli">
-                        <p className="p-kembali">Kembali</p>
+                        <NavItem className="kembali-search">
+                            <Link className='p-kembali' to='/homepage'>Kembali</Link>
+                        </NavItem>
                     </div>
                 </Form>
             </Container>

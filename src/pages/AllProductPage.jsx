@@ -1,6 +1,6 @@
 import React from 'react';
 import AppNavbar from '../components/AppNavbar';
-import AppCardAll from '../components/AppCardAll';
+import AppCardAll from '../pageinvestasi/AppCardAll';
 import AppFooter from '../components/AppFooter';
 import {Table} from 'reactstrap';
 import GroupingDropDown from '../components/GroupingDropDown';

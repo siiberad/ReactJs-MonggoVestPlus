@@ -46,11 +46,14 @@ body {
     
 }
   .btn {
+    padding: .375rem 1.75rem;
+    
     &:link,
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
-        padding: 10px 38px;
+        // padding: 10px 38px;
+        padding: .375rem 1.75rem;
         display: inline-block;
         transition: all .2s;
         position: relative;
