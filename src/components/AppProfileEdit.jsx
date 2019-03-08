@@ -9,7 +9,8 @@ import {
 import axios from "axios";
 import "../assets/css/formstyle.css";
 
-axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
+// axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
+axios.defaults.baseURL = 'http://localhost:8080'
 // axios.defaults.headers.common = {'Authorization': localStorage.getItem('JWT_TOKEN')}
 
 export default class AppProfileEdit extends Component {
@@ -33,7 +34,8 @@ export default class AppProfileEdit extends Component {
       "transactionModels": [],
       "password": '',
       "username": '',
-      "authorities": ''
+      "authorities": '',
+      "enabled": ''
     };
 
     this.state = {
@@ -106,7 +108,8 @@ export default class AppProfileEdit extends Component {
         transactionModels: this.state.transactionModels,
         password: this.state.userPassword,
         username: this.state.userEmail,
-        authorities: this.state.authorities
+        authorities: this.state.authorities,
+        enabled: this.state.enabled
       }, { headers: { "Authorization": token } })
       .then(function (response) {
         // console.log(response);

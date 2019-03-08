@@ -17,6 +17,9 @@ import loggedIn from '../helpers/loggedIn';
 // import "../assets/css/stylenav.css";
 import { request } from "http";
 
+// axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
+axios.defaults.baseURL = 'http://localhost:8080'
+
 class AppLoginModalBox extends React.Component {
   constructor(props) {
     super(props);
@@ -52,8 +55,8 @@ class AppLoginModalBox extends React.Component {
   submit(e) {
     e.preventDefault();
     axios
-      // .post("http://localhost:8080/api/login", {
-      .post("https://mgvplus.herokuapp.com/api/login", {
+      .post("/api/login", {
+      // .post("/api/login", {
         userEmail: this.state.userEmail,
         userPassword: this.state.userPassword
       })
