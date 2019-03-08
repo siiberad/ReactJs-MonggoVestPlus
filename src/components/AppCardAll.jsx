@@ -39,7 +39,10 @@ class AppCardAll extends Component{
                   isLoading: false
                 });
               })
-              .catch(error => this.setState({ error, isLoading: false }));
+            .then(response =>{
+              localStorage.setItem('product_id',response.data.product.productId)
+            })
+            .catch(error => this.setState({ error, isLoading: false }));
                 
             }
         

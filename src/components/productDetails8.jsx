@@ -61,8 +61,10 @@ render() {
           <div>
             <AppNavbar/>
           <Container className="margin-form"> 
+          <Container className="productTitle">
           <h2>{this.state.productName}</h2>
           <h4>{this.state.productPrice}</h4>
+          </Container>
                 <Row>
                     <Col xs="6">
                         <CarouselProductDetail8 />

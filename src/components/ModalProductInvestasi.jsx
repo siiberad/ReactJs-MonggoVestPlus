@@ -9,6 +9,8 @@ import {
   Col,
   Input
 } from "reactstrap";
+import axios from 'axios';
+
 import {
   Link
 } from "react-router-dom";
@@ -18,7 +20,8 @@ class ModalProductInvestasi extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      amountValue: 5000
+      amountValue: 5000,
+      // jumlahTotalLot: ''
     };
 
     this.toggle = this.toggle.bind(this);
@@ -41,13 +44,26 @@ class ModalProductInvestasi extends React.Component {
 
   totalHarga
 
+  componentDidMount() {
+    // let productId = this.state.productId;
+    // const { match: { params } } = this.props;
+    let id = localStorage.getItem('product_id');
+    // console.log(productId)
+    axios.get(`https://mgvplus.herokuapp.com/products/${id}`).then(response => {
+      const jumlahTotalLot = response.data.jumlahTotalLot;
+      console.log('ini jumlahlot', response.data.jumlahTotalLot)
+      this.setState({jumlahTotalLot});
+      console.log('ini jumlahlot', jumlahTotalLot)
+  });
+}
+
   render() {
     const closeBtn = (
       <button className="close" onClick={this.toggle}>
         &times;
       </button>
     );
-    let { amountValue, yearsValue } = this.state; 
+    let { amountValue, yearsValue, jumlahTotalLot} = this.state; 
     return (
       <div>
         <Button color="primary" onClick={this.toggle}>
@@ -79,7 +95,7 @@ class ModalProductInvestasi extends React.Component {
                 <Input
                   type="range"
                   min="0"
-                  max="50"
+                  max= {jumlahTotalLot}
                   value={this.state.value}
                   step="1"
                   class="slider"

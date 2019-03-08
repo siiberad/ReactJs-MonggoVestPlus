@@ -42,6 +42,7 @@ class AppRouter extends React.Component{
                         <Route path="/product-details/7" component={ProductDetails7} />
                         <Route path="/product-details/8" component={ProductDetails8} />
                         <Route path="/product-details/9" component={ProductDetails9} />
+                        {/* <Route path="/product-details/:id" component={ProductDetailsPage} /> */}
                         <Route path='/transaction' component={TrxPage}  />
                         <Route exact path='/profile/edit' component={ProfileEditPage} />
                         <Route exact path='/search' component={Search} />
