@@ -10,23 +10,23 @@ import {
 
 const items = [
   {
-    src: 'https://res.cloudinary.com/monggovestplus/image/upload/v1551526907/kambing-1-1.jpg',
+    src: 'https://res.cloudinary.com/monggovestplus/image/upload/v1551526907/domba-1-1.jpg',
     altText: '',
     caption: ''
   },
   {
-    src: 'https://res.cloudinary.com/monggovestplus/image/upload/v1551526907/kambing-1-2.jpg',
+    src: 'https://res.cloudinary.com/monggovestplus/image/upload/v1551526907/domba-1-2.jpg',
     altText: '',
     caption: ''
   },
   {
-    src: 'https://res.cloudinary.com/monggovestplus/image/upload/v1551526907/kambing-1-3.jpg',
+    src: 'https://res.cloudinary.com/monggovestplus/image/upload/v1551526907/domba-1-3.jpg',
     altText: '',
     caption: ''
   }
 ];
 
-class CarouselProductDetail extends Component {
+class CarouselProductDetail1 extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0 };
@@ -92,4 +92,4 @@ class CarouselProductDetail extends Component {
     );
   }
 }
-export default CarouselProductDetail;
+export default CarouselProductDetail1;
