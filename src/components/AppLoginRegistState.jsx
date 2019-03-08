@@ -30,7 +30,7 @@ export default class AppLoginRegistState extends Component {
 
   render() {
     return (
-      <div className="modal-login" id="#ModalLogin">
+      <div>
         <Button id="bt-nav" onClick={this.toggle}>
           LOGIN{this.props.buttonLabel}
         </Button>
@@ -38,6 +38,7 @@ export default class AppLoginRegistState extends Component {
           isOpen={this.state.modalLogin}
           toggle={this.toggle}
           toggleClose={this.toggleClose}
+          checkAuth={this.props.checkAuth}
         />
         <AppRegistrationModal
           modalRegister={this.state.modalRegister}

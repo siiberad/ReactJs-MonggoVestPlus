@@ -67,7 +67,7 @@ class AppRegistrationModal extends React.Component {
         userPassword: this.state.userPassword
       })
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         if (response.status === 201) {
           alert("Akun Anda telah berhasil dibuat, silahkan cek e-mail Anda");
         }
@@ -94,7 +94,7 @@ class AppRegistrationModal extends React.Component {
         <ModalBody>
           <Form onSubmit={this.submit}>
             <FormGroup>
-              <Label>Nama Lengkap (Sesuai KTP): </Label>
+              <Label>Nama Lengkap (Sesuai Tanda Pengenal): </Label>
               <Input
                 type="text"
                 required="required"

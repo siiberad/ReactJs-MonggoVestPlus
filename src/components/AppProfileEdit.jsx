@@ -48,7 +48,7 @@ export default class AppProfileEdit extends Component {
   handleChange(event) {
     let name = event.target.name;
     let value = event.target.value;
-    console.log(name, value);
+    // console.log(name, value);
     let data = {};
     data[name] = value;
 
@@ -59,7 +59,7 @@ export default class AppProfileEdit extends Component {
     axios.get('/province')
       .then(response => {
         this.setState({ province: response.data })
-        console.log('data province', response.data)
+        // console.log('data province', response.data)
       })
       .catch(err => {
         console.log(err)
@@ -68,13 +68,11 @@ export default class AppProfileEdit extends Component {
 
   getUserDetails() {
     let token = localStorage.getItem('JWT_TOKEN')
-    // let config = {
-    //   headers: {'Authorization': token}}
     let userId = localStorage.getItem('USER_ID')
     axios.get(`/user/${userId}`, { headers: { "Authorization": token } })
       .then(response => {
         this.setState(response.data)
-        console.log('data user', response.data)
+        // console.log('data user', response.data)
       })
       .catch(err => {
         console.log(err)
@@ -111,7 +109,7 @@ export default class AppProfileEdit extends Component {
         authorities: this.state.authorities
       }, { headers: { "Authorization": token } })
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         if (response.status === 200) {
           alert("Profil Anda telah berhasil disimpan");
           this.props.history.push('/');
@@ -135,7 +133,7 @@ export default class AppProfileEdit extends Component {
               <Label>Nama Lengkap: </Label>
               <Input
                 type="text"
-                disabled="true"
+                disabled={true}
                 name="userFullName"
                 value={this.state.userFullName}
                 placeholder="Nama lengkap Anda"
@@ -146,7 +144,7 @@ export default class AppProfileEdit extends Component {
               <Label>Email: </Label>
               <Input
                 type="text"
-                disabled="true"
+                disabled={true}
                 name="userEmail"
                 value={this.state.userEmail}
                 placeholder="Alamat email Anda"
