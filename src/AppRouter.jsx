@@ -1,8 +1,10 @@
 import React from 'react';
 import {
-    BrowserRouter,
+    BrowserRouter as
+    Router,
     Route
 } from 'react-router-dom';
+import { LastLocationProvider } from 'react-router-last-location';
 import App from './App'
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import TentangKami from './pagetentangkami/TentangKami';
@@ -21,23 +23,24 @@ class AppRouter extends React.Component{
     render(){
         return(
             <div>
-                <BrowserRouter>
-                    <div>
-                        <Route exact path='/' component={App}  />
-                        <Route path='/tentangkami' component={TentangKami}  />
-                        <Route path='/bantuan' component={Bantuan}  />
-                        <Route path='/carakerja' component={CaraKerja}  />
-                        <Route exact path='/allproduct' component={AllProductPage}  />
-                        <Route path="/product-details" component={ProductDetailsPage} />
-                        <Route path='/transaction' component={TrxPage}  />
-                        <Route path='/profile/edit' component={ProfileEditPage} />
-                        <Route path='/search' component={Search} />
-                        <Route path='/results' component={AppResults} />
-                        <Route path='/loginregister' component={AppLoginRegistState} />
-                        <Route path='/homepage' component={HomePages} />
-                        <Route path='/investasi' component={Investasi} />
-                    </div>
-                </BrowserRouter>
+                <Router>
+                    <LastLocationProvider>
+                            <div>
+                                <Route exact path='/' component={App}  />
+                                <Route path='/tentangkami' component={TentangKami}  />
+                                <Route path='/bantuan' component={Bantuan}  />
+                                <Route path='/carakerja' component={CaraKerja}  />
+                                <Route exact path='/allproduct' component={AllProductPage}  />
+                                <Route path="/product-details" component={ProductDetailsPage} />
+                                <Route path='/transaction' component={TrxPage}  />
+                                <Route path='/profile/edit' component={ProfileEditPage} />
+                                <Route path='/search' component={Search} />
+                                <Route path='/results' component={AppResults} />
+                                <Route path='/homepage' component={HomePages} />
+                                <Route path='/investasi' component={Investasi} />
+                            </div>
+                    </LastLocationProvider>
+                </Router>
             </div>
         )
     }

@@ -2,55 +2,140 @@ import React from 'react';
 import { Button, Form, FormGroup, Label, Input, Container, NavItem,
     Card, CardBody, CardImg,CardTitle, CardSubtitle, CardText} from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { withLastLocation, LastLocationProvider } from 'react-router-last-location';
+import { withLastLocation } from 'react-router-last-location';
 import FilterResults from 'react-filter-search';
 import '../assets/scss/_searchstyle.scss';
 import axios from 'axios';
+import Search from 'react-search-input';
+import Select from 'react-select';
+import Back from '../helpers/Back';
+import Suggestions from '../helpers/Suggestions';
+import option from './Productname';
 // import SearchResults from '../searchpage/fungsi';
 
 class AppSearch extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            error: false,
             hasil:[],
-            productName:''
+            // productName:'',
+            selectedOption:null
         }
-        this.handleChange = this.handleChange.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+        // this.onProductName = this.onProductName.bind(this);   yg bisa
     }
 
-    componentWillMount(){
-        axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
+    // onProductName (selectedOption) {
+    //     this.setState({ selectedOption });   yang bisa
+    // }
+
+    componentWillMount() {
+        let currentComponent = this;
+        axios.get(`https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30`)
         .then(res => {
-            this.setState({hasil: res.data.content})
+            console.log('asek',res);
+            console.log('ahoy',res.data);
+            console.log('asiyap', res.data.productName)
+
+            currentComponent.setState({
+                hasil: res.data.productName
+            })
+            console.log('bismillah', this.state.productName)
+        })
+        .catch((error) => {
+            console.error('haduhh',error);
         })
     }
 
-    handleChange = event => {
-        const { value } = event.target;
-        this.setState({ value });
-    };
+
+
+
+
+    // componentWillMount(){
+    //     axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
+    //     .then(res => {
+    //         this.setState({hasil: res.data.content})
+    //     })
+    // }
+
+    // handleChange = event => {
+    //     const { value } = event.target;
+    //     this.setState({ value });
+    // };
     
 
 
-    componentDidMount() {
-        axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
-        .then (res => {
-            const productName = res.data.productName;
-            this.setState({hasil: res.data.content , productName})
-            console.log("uh shi up", this.state.hasil)
-        })
-    };
+    // componentDidMount() {
+    //     axios.get(`https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=${this.state.productName}&orderBy=productId&page=0&size=30`)
+    //     .then (res => {
+    //         const hasil = res.data.content;
+    //         // const productName = res.data.content;
+    //         this.setState({hasil: res.data.content})
+    //         this.setState({productName: res.data.productName})
+    //         console.log("Anjing", this.state.hasil)
+    //         console.log('jancux', this.state.productName)
+    //     })
+    // };
+
+
+
+
+    // onProductName (selectedOption) {
+    //     this.setState({ selectedOption });
+    // }
+
+    // componentDidMount(){
+    //     axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
+    //     .then(res => {
+    //         const hasil = res.data;
+    //         this.setState({ hasil });
+    //         console.log('uh she up', this.state.hasil);
+    //     })
+    // };
+
+    // getInfo = () => {
+    //     axios.get(`https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=${this.state.productName}&orderBy=productId&page=0&size=30`)
+    //     .then(({ data }) => {
+    //         this.setState({
+    //             hasil: data.data
+    //         })
+    //     })
+    //     .catch(() => this.setState({ error: true }))
+    //     console.log('asu', this.state.getInfo);
+    // }
+
+    // handleInputChange = () => {
+    //     this.setState({
+    //         productName: this.search.value
+    //     }, () => {
+    //         if (this.state.hasil && this.state.hasil.length > 1) {
+    //                 // this.showDropdown()
+    //             if (this.state.productName.length % 2 === 0) {
+    //                 this.getInfo()
+    //             }
+    //         } else if (!this.state.hasil) {
+    //             // this.hideDropdown()
+    //         }
+    //     })
+    // }
 
     // onSubmit(e) {
     //     let productName = localStorage.getItem('PRODUCT_NAME')
-    //     console.log(productName)
-    // axios.post(`https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=${producName}&orderBy=productId&page=0&size=30`)
-    // }
+    // axios.post(`https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=${productName}&orderBy=productId&page=0&size=30`)
+    // .then(res => {
+    //     this.setState({ selectedOption: this.state.productName })
+    // })
+    // };
 
   render() {
-   
-    const { hasil } = this.state;
-    console.log('nni korewa',hasil)
+    //   const renderItem = this.state.hasil.map
+//    console.log('name', this.state.productName);
+//    console.log('kamfang', this.state.search);
+//    console.log('hasil', this.state.getInfo)
+    // const { hasil } = this.state;
+    // console.log('nni korewa',hasil)
+    // const { selectedOption } = this.state;
     return (
         <div className="box-size-search">
             <Container className="search-all">
@@ -59,51 +144,22 @@ class AppSearch extends React.Component {
          
                     <FormGroup>
                         <Label className="label-search" for="search-web" hidden>Search</Label>
-                            <Input className="input-search"
-                            type="search" 
-                            value={hasil} 
-                            onChange={this.handleChange} 
+                            <Search className="input-search"
+                            type="search"  
+                            // onChange={this.onProductName}  yang bisa
+                            // options={option}
+                            // ref={Input => this.search = Input}
+                            // onChange={this.handleInputChange} 
                             name="search" 
                             id="search-web" 
                             placeholder="Search" 
                             />
                             <hr/>
-                            <div>
-                                {/* <SearchResults
-                                    value={value}
-                                    hasil={hasil}
-                                    renderResults={res => (
-                                        <div style={{ marginTop: '16px' }}>
-                                            {res.map(({ hasil }, i) =>(
-                                                <div 
-                                                    key={i}
-                                                    style={{
-                                                        backgroundColor: '#f7f7f7',
-                                                        marginBottom: '8px',
-                                                        borderRadius:'4px',
-                                                        padding:'16px',
-                                                        alignSelf:'start',
-                                                        width:'100%'
-                                                    }}
-                                                    >
-                                                    <span>{hasil.productName}</span>
-                                                    <img src={hasil.productImage1} alt={hasil.productId}/>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    )}
-                                /> */}
-                                {/* <pre>
-                                    <code></code>
-                                </pre> */}
-                            </div>
-                                
-                  </FormGroup>
-                    <div className="div-kembli">
-                        <NavItem className="kembali-search">
-                            <Link className='p-kembali' to='/homepage'>Kembali</Link>
-                        </NavItem>
-                    </div>
+                            {/* <Suggestions hasil={this.state.hasil} /> */}
+                            {/* <p>{this.state.productName}</p> */}
+                    </FormGroup>
+
+                        <Back/>
                 </Form>
             </Container>
         </div>
@@ -112,6 +168,7 @@ class AppSearch extends React.Component {
 }
 
 export default AppSearch;
+
 
 
 
