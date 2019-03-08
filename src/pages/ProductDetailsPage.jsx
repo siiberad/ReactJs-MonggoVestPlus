@@ -7,8 +7,10 @@ class AppHome extends React.Component {
       render() {
           return(
             <div>
-              <AppNavbar/> <br/> <br/> <br/>
-            <ProductDetails/>
+              <AppNavbar />
+              <Container>
+                <ProductDetails/>
+              </Container>
             </div>
           )
       }

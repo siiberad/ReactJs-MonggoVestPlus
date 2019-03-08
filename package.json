@@ -20,6 +20,7 @@
     "bootstrap": "^4.2.1",
     "node-sass": "^4.11.0",
     "react": "^16.8.1",
+    "react-bootstrap-sweetalert": "^4.4.1",
     "react-currency-format": "^1.0.0",
     "react-dom": "^16.8.1",
     "react-filter-search": "^1.0.8",
@@ -32,7 +33,9 @@
     "react-select": "^2.4.1",
     "reactrangeslider": "^3.0.6",
     "reactstrap": "^7.1.0",
-    "store": "^2.0.12"
+    "store": "^2.0.12",
+    "sweetalert-react": "^0.4.11",
+    "sweetalert2": "^8.2.6"
   },
   "scripts": {
     "start": "react-scripts start",
