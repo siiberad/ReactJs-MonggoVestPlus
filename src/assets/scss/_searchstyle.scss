@@ -2,7 +2,7 @@
 .box-size-search {  
   box-sizing: border-box;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
 
    .search-all {
     position: relative;
@@ -26,18 +26,17 @@
     .input-search {
       // background-color: rgb(61, 55, 55);
       text-align: center;
+      font-size: 34px;
+      border: none;
+      outline: none;
     }
   }
 }
 
-  .div-kembali {
-    position: absolute;
+.kembali-search {
+  list-style: none;
+
+}
     
-    p {
-      .p-kembali {
-        position: absolute;
-        margin: 50vh;
-      }
-    }
+  
     
-  }
