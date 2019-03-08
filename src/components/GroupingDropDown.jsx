@@ -1,5 +1,5 @@
 import React from 'react';
-import{ Col, Row, Button, Form, FormGroup, Label, Input, Container}from 'reactstrap';
+import{ Col }from 'reactstrap';
 import options from './ProvinceName'
 import Select from 'react-select';
 import axios from 'axios';
@@ -23,7 +23,7 @@ class GroupingDropDown extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     const serverport = {
-        ProvinceModel: parseInt(this.state.selectedOption.value, 10),
+        ProvinceModel: parseInt(this.state.selectedOption.value, 5),
     }
     axios
       .get('', serverport)
