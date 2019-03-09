@@ -7,10 +7,13 @@ import {
   Input, Container
 } from "reactstrap";
 import axios from "axios";
+import store from "store";
 import "../assets/css/formstyle.css";
+import AppLoginRegistState from './AppLoginRegistState';
+import isLoggedIn from '../helpers/loggedIn';
 
 axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
-// axios.defaults.headers.common = {'Authorization': localStorage.getItem('JWT_TOKEN')}
+// axios.defaults.baseURL = 'http://localhost:8080'
 
 export default class AppProfileEdit extends Component {
   constructor(props) {
@@ -33,7 +36,8 @@ export default class AppProfileEdit extends Component {
       "transactionModels": [],
       "password": '',
       "username": '',
-      "authorities": ''
+      "authorities": '',
+      "enabled": ''
     };
 
     this.state = {
@@ -48,7 +52,7 @@ export default class AppProfileEdit extends Component {
   handleChange(event) {
     let name = event.target.name;
     let value = event.target.value;
-    console.log(name, value);
+    // console.log(name, value);
     let data = {};
     data[name] = value;
 
@@ -59,7 +63,7 @@ export default class AppProfileEdit extends Component {
     axios.get('/province')
       .then(response => {
         this.setState({ province: response.data })
-        console.log('data province', response.data)
+        // console.log('data province', response.data)
       })
       .catch(err => {
         console.log(err)
@@ -68,13 +72,11 @@ export default class AppProfileEdit extends Component {
 
   getUserDetails() {
     let token = localStorage.getItem('JWT_TOKEN')
-    // let config = {
-    //   headers: {'Authorization': token}}
     let userId = localStorage.getItem('USER_ID')
     axios.get(`/user/${userId}`, { headers: { "Authorization": token } })
       .then(response => {
         this.setState(response.data)
-        console.log('data user', response.data)
+        // console.log('data user', response.data)
       })
       .catch(err => {
         console.log(err)
@@ -108,12 +110,15 @@ export default class AppProfileEdit extends Component {
         transactionModels: this.state.transactionModels,
         password: this.state.userPassword,
         username: this.state.userEmail,
-        authorities: this.state.authorities
+        authorities: this.state.authorities,
+        enabled: this.state.enabled
       }, { headers: { "Authorization": token } })
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         if (response.status === 200) {
           alert("Profil Anda telah berhasil disimpan");
+          store.set('completedProfile', true);
+          console.log('Profil sudah tersimpan', store.get('completedProfile'))
           this.props.history.push('/');
         } else {
           alert("some error ocurred", response.status);
@@ -125,6 +130,10 @@ export default class AppProfileEdit extends Component {
   }
 
   render() {
+    if (!isLoggedIn()) {
+      return <AppLoginRegistState checkAuth={()=>{window.location.reload()}} modalLogin={true}/>
+      // <Redirect to='/target' />
+    }
     const { province, users } = this.state;
     return (
       <div>
@@ -135,7 +144,7 @@ export default class AppProfileEdit extends Component {
               <Label>Nama Lengkap: </Label>
               <Input
                 type="text"
-                disabled="true"
+                disabled={true}
                 name="userFullName"
                 value={this.state.userFullName}
                 placeholder="Nama lengkap Anda"
@@ -146,7 +155,7 @@ export default class AppProfileEdit extends Component {
               <Label>Email: </Label>
               <Input
                 type="text"
-                disabled="true"
+                disabled={true}
                 name="userEmail"
                 value={this.state.userEmail}
                 placeholder="Alamat email Anda"

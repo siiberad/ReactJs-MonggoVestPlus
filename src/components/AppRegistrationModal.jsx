@@ -14,7 +14,8 @@ import {
 import axios from "axios";
 import "../assets/css/formstyle.css";
 
-axios.defaults.headers.common['Content-Type'] = 'application/json';
+axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
+// axios.defaults.baseURL = 'http://localhost:8080'
 
 class AppRegistrationModal extends React.Component {
   constructor(props) {
@@ -57,17 +58,15 @@ class AppRegistrationModal extends React.Component {
   }
 
   submit(e) {
-    // localStorage.removeItem('USER_ID');
     e.preventDefault();
     axios
-      // .post("http://localhost:8080/api/register", {
-      .post("https://mgvplus.herokuapp.com/api/register", {
+      .post("/api/register", {
         userFullName: this.state.userFullName,
         userEmail: this.state.userEmail,
         userPassword: this.state.userPassword
       })
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         if (response.status === 201) {
           alert("Akun Anda telah berhasil dibuat, silahkan cek e-mail Anda");
         }
@@ -94,7 +93,7 @@ class AppRegistrationModal extends React.Component {
         <ModalBody>
           <Form onSubmit={this.submit}>
             <FormGroup>
-              <Label>Nama Lengkap (Sesuai KTP): </Label>
+              <Label>Nama Lengkap (Sesuai Tanda Pengenal): </Label>
               <Input
                 type="text"
                 required="required"
