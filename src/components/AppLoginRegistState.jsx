@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button } from "reactstrap";
 import AppLoginModalBox from "./AppLoginModalBox";
 import AppRegistrationModal from "./AppRegistrationModal";
+import '../assets/scss/_loginregister.scss';
 
 export default class AppLoginRegistState extends Component {
   constructor(props) {
@@ -31,9 +32,9 @@ export default class AppLoginRegistState extends Component {
   render() {
     return (
       <div className="modal-login" id="#ModalLogin">
-        <Button id="bt-nav" onClick={this.toggle}>
+        <button id="bt-modal" onClick={this.toggle}>
           LOGIN{this.props.buttonLabel}
-        </Button>
+        </button>
         <AppLoginModalBox
           isOpen={this.state.modalLogin}
           toggle={this.toggle}
