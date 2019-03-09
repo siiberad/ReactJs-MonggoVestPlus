@@ -7,6 +7,9 @@ import {Link} from 'react-router-dom';
 class GetAllCards extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      productModel: '',
+  }
   }
   
   render () {
@@ -19,7 +22,11 @@ class GetAllCards extends Component {
             <CardTitle>{name}</CardTitle>
             <CardSubtitle>{province}</CardSubtitle>
             <CardText>{harga}</CardText>
-            <Button ><Link to={{pathname : `/product-details/${id}` }} > Lihat</Link></Button>
+            <Button>
+              <Link to={{ pathname: `/product-details${id}`}}>
+              Lihat 
+              </Link>
+            </Button>
           </CardBody>
         </Card>
       </div>
