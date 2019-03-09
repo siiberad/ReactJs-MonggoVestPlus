@@ -7,11 +7,13 @@ import {
   Input, Container
 } from "reactstrap";
 import axios from "axios";
+import store from "store";
 import "../assets/css/formstyle.css";
+import AppLoginRegistState from './AppLoginRegistState';
+import isLoggedIn from '../helpers/loggedIn';
 
-// axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
-axios.defaults.baseURL = 'http://localhost:8080'
-// axios.defaults.headers.common = {'Authorization': localStorage.getItem('JWT_TOKEN')}
+axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
+// axios.defaults.baseURL = 'http://localhost:8080'
 
 export default class AppProfileEdit extends Component {
   constructor(props) {
@@ -115,6 +117,8 @@ export default class AppProfileEdit extends Component {
         // console.log(response);
         if (response.status === 200) {
           alert("Profil Anda telah berhasil disimpan");
+          store.set('completedProfile', true);
+          console.log('Profil sudah tersimpan', store.get('completedProfile'))
           this.props.history.push('/');
         } else {
           alert("some error ocurred", response.status);
@@ -126,6 +130,10 @@ export default class AppProfileEdit extends Component {
   }
 
   render() {
+    if (!isLoggedIn()) {
+      return <AppLoginRegistState checkAuth={()=>{window.location.reload()}} modalLogin={true}/>
+      // <Redirect to='/target' />
+    }
     const { province, users } = this.state;
     return (
       <div>

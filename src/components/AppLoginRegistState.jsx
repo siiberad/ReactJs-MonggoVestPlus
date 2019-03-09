@@ -8,7 +8,7 @@ export default class AppLoginRegistState extends Component {
     super(props);
     this.state = {
       modalRegister: false,
-      modalLogin: false
+      modalLogin: props.modalLogin
     };
 
     this.toggle = this.toggle.bind(this);

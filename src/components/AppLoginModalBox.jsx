@@ -13,16 +13,14 @@ import {
 } from "reactstrap";
 import store from 'store';
 import axios from "axios";
-import loggedIn from '../helpers/loggedIn';
-// import "../assets/css/stylenav.css";
-import { request } from "http";
 
-// axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
+// axios.defaults.baseURL = 'http://localhost:8080'
 
 class AppLoginModalBox extends React.Component {
   constructor(props) {
     super(props);
+    console.log("the props", this.props);
 
     this.state = {
       userEmail: "",
@@ -78,7 +76,7 @@ class AppLoginModalBox extends React.Component {
         }
       })
       .catch(function (error) {
-        // console.log(error, "the error");
+        console.log("the error", error);
         if (error.response.status === 401) {
           alert("Akun Anda belum teraktivasi, silahkan cek e-mail yang telah didaftarkan sebelumnya");
         } else {

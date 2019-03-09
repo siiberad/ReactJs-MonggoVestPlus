@@ -14,8 +14,8 @@ import {
 import axios from "axios";
 import "../assets/css/formstyle.css";
 
-// axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
+// axios.defaults.baseURL = 'http://localhost:8080'
 
 class AppRegistrationModal extends React.Component {
   constructor(props) {
@@ -58,11 +58,9 @@ class AppRegistrationModal extends React.Component {
   }
 
   submit(e) {
-    // localStorage.removeItem('USER_ID');
     e.preventDefault();
     axios
       .post("/api/register", {
-      // .post(/api/register", {
         userFullName: this.state.userFullName,
         userEmail: this.state.userEmail,
         userPassword: this.state.userPassword

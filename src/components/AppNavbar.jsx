@@ -20,12 +20,10 @@ class AppNavbar extends Component {
 
     this.state = {
       isOpen: false,
-      message: 'You are Logged In',
       isLoggedIn: store.get('loggedIn')
     };
 
     this.toggle = this.toggle.bind(this);
-    this.checkAuth = this.checkAuth.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
 
     // this.navHiden = this.navHiden.bind(this);
@@ -56,7 +54,7 @@ class AppNavbar extends Component {
     });
   }
 
-  checkAuth(){
+  checkAuth=()=>{
     this.setState({isLoggedIn: store.get('loggedIn') === true})
   }
 
