@@ -203,7 +203,7 @@ render() {
               <FormGroup check row>
                 <Label check sm={15}>
                 <Col sm={20}>
-                <Button  to='/' className="btn-animated" outline type="submit" disabled={!isEnabled} size="lg" color="primary" >
+                <Button outline type="submit" disabled={!isEnabled} size="lg" color="primary" >
 
                 Submit
                 </Button>
