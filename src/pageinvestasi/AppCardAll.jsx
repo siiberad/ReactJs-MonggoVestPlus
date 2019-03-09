@@ -30,7 +30,7 @@ class AppCardAll extends Component{
                   id: `${product.productId}` ,
                 name: `${product.productName}` ,
                 province: `${product.provinceModel.provinceName}`,
-                harga: `${product.hargaModal}`,
+                harga: `${product.productPrice}`,
                 image: `${product.productImage1}`
               }))
             )
@@ -40,7 +40,10 @@ class AppCardAll extends Component{
                   isLoading: false
                 });
               })
-              .catch(error => this.setState({ error, isLoading: false }));
+            .then(response =>{
+              localStorage.setItem('product_id',response.data.product.productId)
+            })
+            .catch(error => this.setState({ error, isLoading: false }));
                 
             }
         
