@@ -14,20 +14,22 @@ import axios from 'axios';
 import {
   Link
 } from "react-router-dom";
+import AppTrx from "./AppTrx";
 
 class ModalProductInvestasi extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       modal: false,
-      amountValue: 5000,
-      // jumlahTotalLot: ''
+      jumlahTotalLot: '',
+      lotTaken: '0',
     };
 
     this.toggle = this.toggle.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.handleAmountChange = value => {
-        this.setState({ amountValue: value})
+    this.handleAmountChange = lotTaken => {
+        this.setState({ 
+          lotTaken: lotTaken})
     }
   }
 
@@ -38,18 +40,12 @@ class ModalProductInvestasi extends React.Component {
   }
 
   handleChange(event) {
-    var value = event.target.value;
-    this.setState({ ...this.state, value });
+    var lotTaken = event.target.value;
+    this.setState({ ...this.state, lotTaken });
   }
 
-  totalHarga
-
   componentDidMount() {
-    // let productId = this.state.productId;
-    // const { match: { params } } = this.props;
-    let id = localStorage.getItem('product_id');
-    // console.log(productId)
-    axios.get(`https://mgvplus.herokuapp.com/products/${id}`).then(response => {
+    axios.get(`https://mgvplus.herokuapp.com/products/${this.props.productId}`).then(response => {
       const jumlahTotalLot = response.data.jumlahTotalLot;
       console.log('ini jumlahlot', response.data.jumlahTotalLot)
       this.setState({jumlahTotalLot});
@@ -63,7 +59,8 @@ class ModalProductInvestasi extends React.Component {
         &times;
       </button>
     );
-    let { amountValue, yearsValue, jumlahTotalLot} = this.state; 
+    let { jumlahTotalLot, lotTaken} = this.state; 
+    let totalBayar = (lotTaken * 500000).toLocaleString('id');
     return (
       <div>
         <Button color="primary" onClick={this.toggle}>
@@ -85,7 +82,7 @@ class ModalProductInvestasi extends React.Component {
                   id="lotInputBox"
                   type="number"
                   placeholder="0"
-                  value={this.state.value}
+                  value={this.state.lotTaken}
                   onChange={this.handleChange}
                 >
                   0
@@ -96,7 +93,7 @@ class ModalProductInvestasi extends React.Component {
                   type="range"
                   min="0"
                   max= {jumlahTotalLot}
-                  value={this.state.value}
+                  value={this.state.lotTaken}
                   step="1"
                   class="slider"
                   id="myRange"
@@ -105,13 +102,13 @@ class ModalProductInvestasi extends React.Component {
               </Col>
             </Row>
             {/* <SliderProductLot/> */}
-            Harga per lot : Rp. 500.000,00 <br />
-            Total Harga : <br />
+            <a> Harga per lot : Rp. 500.000,00 </a><br/>
+            <a> Total Harga : Rp {totalBayar} </a><br/>
           </ModalBody>
           <ModalFooter>
             <Button  onClick={this.toggle}>
-            <Link to="/transaction">
-              Lanjutkan
+            <Link to={{ pathname: `/transaction/${this.props.productId}`,state: { lotTaken: this.state.lotTaken}}}>
+            Lanjutkan
             </Link>
             </Button>{" "}
             <Button  onClick={this.toggle}>
