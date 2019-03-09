@@ -37,12 +37,7 @@ class ProductDetails extends React.Component {
     }
   }
 
-  // ----------------------------------------------------------------
-
   componentDidMount() {
-    const {productId} = this.state
-    // const { match: { params } } = this.props;
-    // let productId = this.state.productId;
     axios.get(`https://mgvplus.herokuapp.com/products/${this.props.productId}`).then(response => {
       const productName = response.data.productName;
       const productPrice = response.data.productPrice;

@@ -11,6 +11,7 @@ import store from "store";
 import "../assets/css/formstyle.css";
 import AppLoginRegistState from './AppLoginRegistState';
 import isLoggedIn from '../helpers/loggedIn';
+import { HashRouter } from 'react-router-dom';
 
 axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
 // axios.defaults.baseURL = 'http://localhost:8080'
@@ -118,8 +119,6 @@ export default class AppProfileEdit extends Component {
         if (response.status === 200) {
           alert("Profil Anda telah berhasil disimpan");
           store.set('completedProfile', true);
-          console.log('Profil sudah tersimpan', store.get('completedProfile'))
-          this.props.history.push('/');
         } else {
           alert("some error ocurred", response.status);
         }
@@ -132,13 +131,12 @@ export default class AppProfileEdit extends Component {
   render() {
     if (!isLoggedIn()) {
       return <AppLoginRegistState checkAuth={()=>{window.location.reload()}} modalLogin={true}/>
-      // <Redirect to='/target' />
     }
     const { province, users } = this.state;
     return (
       <div>
         <Container className="margin-form">
-          <h2 align='center'>Ubah Profil</h2>
+          <h2 align='center'>Lengkapi Profil</h2>
           <Form onSubmit={this.submit}>
             <FormGroup>
               <Label>Nama Lengkap: </Label>
@@ -231,7 +229,7 @@ export default class AppProfileEdit extends Component {
                 className="no-spinners"
                 name="userContact"
                 value={this.state.userContact}
-                placeholder="081 123 123 123"
+                placeholder="Masukkan Nomor HP Anda"
                 onChange={this.handleChange}
               />
             </FormGroup>
