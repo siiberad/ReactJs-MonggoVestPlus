@@ -23,7 +23,7 @@ class GetAllCards extends Component {
             <CardSubtitle>{province}</CardSubtitle>
             <CardText>{harga}</CardText>
             <Button>
-              <Link to={{ pathname: `/product-details${id}`}}>
+              <Link to={{ pathname: `/product-details/${id}`}}>
               Lihat 
               </Link>
             </Button>

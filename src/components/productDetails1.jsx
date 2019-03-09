@@ -6,6 +6,7 @@ import { TabContent,
   NavItem,
   NavLink,
   Row,
+  Button,
   Col,} from 'reactstrap';
 import {Container} from'reactstrap';
 import classnames from 'classnames';
@@ -15,6 +16,8 @@ import CarouselProductDetail1 from './CarouselProductDetail1'
 import ModalProductInvestasi from './ModalProductInvestasi';
 import AppNavbar from './AppNavbar';
 import AppFooter from './AppFooter';
+import AppTrx from './AppTrx';
+import { Link } from 'react-router-dom';
 
 
 class ProductDetails1 extends React.Component {
@@ -56,7 +59,7 @@ componentDidMount() {
 }
 
 render() {
-  
+  console.log(this.state.productId)
         return(
           <div>
           <AppNavbar/>
@@ -126,7 +129,11 @@ render() {
                 <br/>
                 <Row align="center">
                     <Col sm="12" md={{ size: 6, offset: 3 }}>
-                        <ModalProductInvestasi/>
+                    <Button color="primary" onClick={this.toggle}>
+                    <Link to={`/transaction/${this.state.productId}`} >
+                      Lakukan Investasi
+                    </Link>
+                    </Button>
                     </Col>
                 </Row>
             
