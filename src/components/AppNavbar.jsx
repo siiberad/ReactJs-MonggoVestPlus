@@ -8,6 +8,7 @@ import {
   NavItem,
    } from 'reactstrap';
 import '../assets/scss/_navbarstyle.scss';
+import store from 'store';
 import { BrowserRouter, Link } from "react-router-dom";
 import AppLoginRegistState from './AppLoginRegistState';
 import AppUserSetting from './AppUserSetting';

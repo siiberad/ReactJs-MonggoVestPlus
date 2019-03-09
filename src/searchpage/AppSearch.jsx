@@ -167,7 +167,7 @@ class AppSearch extends React.Component {
     }
 }
 
-// export default AppSearch;
+export default AppSearch;
 
 
 
