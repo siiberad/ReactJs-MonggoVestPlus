@@ -8,18 +8,23 @@ import {
   NavItem,
    } from 'reactstrap';
 import '../assets/scss/_navbarstyle.scss';
+import store from 'store';
 import { BrowserRouter, Link } from "react-router-dom";
 import AppLoginRegistState from './AppLoginRegistState';
+import AppUserSetting from './AppUserSetting';
 
 
 class AppNavbar extends Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      isLoggedIn: store.get('loggedIn')
     };
+
+    this.toggle = this.toggle.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
 
     // this.navHiden = this.navHiden.bind(this);
 
@@ -48,12 +53,33 @@ class AppNavbar extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  checkAuth=()=>{
+    this.setState({isLoggedIn: store.get('loggedIn') === true})
+  }
+
+  handleLogout() {
+    localStorage.removeItem('JWT_TOKEN');
+    store.set('loggedIn', false);
+    // console.log('di handle logout',store.get('loggedIn'));
+    this.setState({isLoggedIn: !this.state.isLoggedIn})
+  }
+
   render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    // console.log(isLoggedIn)
+    let isActive;
+
+    if (isLoggedIn !== true) {
+      isActive = <AppLoginRegistState checkAuth={this.checkAuth}/>;
+    } else {
+      isActive = <AppUserSetting handleLogout={this.handleLogout}/>;
+    }
     return (
       <div>
         <Navbar id="navbar" color="light" className="colornav" light expand="md" fixed='top'>
           <NavbarBrand href="/" className="napbar">
-          <img src="https://res.cloudinary.com/monggovestplus/image/upload/v1551762164/logomonggovest.png" height ="35" />
+            <img src="https://res.cloudinary.com/monggovestplus/image/upload/v1551762164/logomonggovest.png" height="35" />
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -68,9 +94,16 @@ class AppNavbar extends Component {
                 <Link className='nav-app' to='/tentangkami'>Tentang Kami</Link>
               </NavItem>
               <NavItem>
+                <Link className='nav-app' to='/syarat'>Syarat dan Ketentuan</Link>
+              </NavItem>
+              <NavItem>
                 <Link className='nav-app' to='/bantuan'>Bantuan</Link>
               </NavItem>
-              <AppLoginRegistState/>
+              <NavItem>
+                {isActive}
+              {/* {this.state.isLoggedIn ?
+                (<AppLoginRegistState />) : (<AppUserSetting />)} */}
+              </NavItem>
               {/* <NavItem>
                   <Link id="bt-nav" to='/login'>Login</Link>
               </NavItem> */}

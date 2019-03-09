@@ -9,7 +9,7 @@ export default class AppLoginRegistState extends Component {
     super(props);
     this.state = {
       modalRegister: false,
-      modalLogin: false
+      modalLogin: props.modalLogin
     };
 
     this.toggle = this.toggle.bind(this);
@@ -39,6 +39,7 @@ export default class AppLoginRegistState extends Component {
           isOpen={this.state.modalLogin}
           toggle={this.toggle}
           toggleClose={this.toggleClose}
+          checkAuth={this.props.checkAuth}
         />
         <AppRegistrationModal
           modalRegister={this.state.modalRegister}

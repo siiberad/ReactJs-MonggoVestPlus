@@ -24,13 +24,13 @@ class AppCardAll extends Component{
       }
 
     componentDidMount(){
-             axios.get("http://mgvplus.herokuapp.com/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=19")
+             axios.get("https://mgvplus.herokuapp.com/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=19")
             .then(response =>
               response.data.content.map(product => ({
                   id: `${product.productId}` ,
                 name: `${product.productName}` ,
                 province: `${product.provinceModel.provinceName}`,
-                harga: `${product.hargaModal}`,
+                harga: `${product.productPrice}`,
                 image: `${product.productImage1}`
               }))
             )
@@ -40,7 +40,10 @@ class AppCardAll extends Component{
                   isLoading: false
                 });
               })
-              .catch(error => this.setState({ error, isLoading: false }));
+            .then(response =>{
+              localStorage.setItem('product_id',response.data.product.productId)
+            })
+            .catch(error => this.setState({ error, isLoading: false }));
                 
             }
         

@@ -20,7 +20,7 @@ const AppCaraKerja = (props) => {
     <Row className = "row-card"> */}
       <Col sm="3">
       <Card className="cardbox">
-        <CardImg className="bg-card" src="http://monggovest.herokuapp.com/static/img/icon-pay.6cb145d.svg" alt="Card image cap" />
+        <CardImg className="bg-card" src="https://monggovest.herokuapp.com/static/img/icon-pay.6cb145d.svg" alt="Card image cap" />
         <CardTitle>Lakukan Pembayaran</CardTitle>
       </Card>
       </Col>

@@ -39,7 +39,7 @@ class AllProductPage extends React.Component{
                 
                </Table>
                
-                <h2 className="text-home" md="12">NIH PRODUKNYA</h2>
+                <h2 className="text-home" md="12">DAFTAR INSTRUMEN INVESTASI</h2>
                 <AppCardAll/>
                 <CardPagination/>
                 

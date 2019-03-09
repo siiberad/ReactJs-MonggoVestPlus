@@ -5,8 +5,11 @@ import {Container} from'reactstrap';
 import axios from 'axios';
 import Select from 'react-select';
 import options from "./BankName";
-import loggedIn from "../helpers/loggedIn"
-import { Redirect } from 'react-router-dom';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
+import "../assets/css/animate.css"
+import "../assets/scss/AppMain.scss"
+import { Link } from 'react-router-dom';
 
 class AppTrx extends React.Component {
   constructor(props) {
@@ -24,7 +27,7 @@ class AppTrx extends React.Component {
         lotTaken:'',
         noRekening: '',
         bankModel: '',
-        selectedOption: null,
+        selectedOption: '',
         check: false
     }
 }
@@ -47,38 +50,61 @@ handleChecked = () => {
   this.setState({
       check: !this.state.check,
   });
+  Swal.fire({
+    title: 'Persetujuan',
+    html:
+    'Dengan ini anda setuju dengan ' +
+    '<a href="http://localhost:3000/syarat">Syarat dan Ketentuan</a> ' +
+    'yang berlaku.',
+    animation: false,
+    customClass: 'animated bounceInUp',
+    })
 }
 
 componentDidMount() {
-  let productId = localStorage.getItem('JWT_TOKEN')
-  axios.get(`https://mgvplus.herokuapp.com/products/${productId}`).then(response => {
+  axios.get(`https://mgvplus.herokuapp.com/products/4`).then(response => {
       const productName = response.data.productName;
       const productPrice = response.data.productPrice;
       this.setState({productName, productPrice});
   });
-  localStorage.getItem('JWT_TOKEN')
 }
 
 onSubmit(e) {
-    let userId = localStorage.getItem('USER_ID')
-    let productModel = localStorage.getItem('PRODUCT_ID')
+    const token = localStorage.getItem('JWT_TOKEN')
+    const tokenParts = token.split('.');
+    const encodedPayload = tokenParts[1];
+    const rawPayload = atob(encodedPayload);
+    const user = JSON.parse(rawPayload);    
+    const userId = user.userId
+  
     let bankModel = parseInt(this.state.selectedOption.value, 10)
-    let token = localStorage.getItem('JWT_TOKEN')
-    console.log(userId, token)
+  
     e.preventDefault();
-    axios.post(`https://mgvplus.herokuapp.com/user/${userId}/transactions?productModel=${productModel}&bankModel=${bankModel}`, 
+    axios.post(`https://mgvplus.herokuapp.com/users/${userId}/transactions?productModel=3&bankModel=${bankModel}`, 
     {
     lotTaken: parseInt(this.state.lotTaken, 10),
     noRekening: this.state.noRekening 
     }, 
+    
     { headers: { "Authorization": token } })
       .then(res => console.log(res.data));
+      
       this.setState({
         noRekening: '',
         selectedOption: null,
         lotTaken: '',
         check: false,
-      });
+      }
+      );
+      
+      Swal.fire({
+        title: 'Invoice dan Agreement',
+        text:'Invoice dan Agreement telah dikirim, Silahkan Cek Email Anda',
+        animation: false,
+        customClass: 'animated bounceInDown'
+      }).then(function() {
+        window.location = "/allproduct";
+    });
 }
 
 canBeSubmitted() {
@@ -87,14 +113,11 @@ canBeSubmitted() {
 }
 
 render() {
-    // if (!loggedIn()) {
-    // return <Redirect to="/" />
-    // }
     const isEnabled = this.canBeSubmitted();
     const { selectedOption } = this.state;
     return (
       <div>
-        <Container className="margin-form">
+        <Container className="margin-form" class="col-sm-6">
             <Form onSubmit={this.onSubmit}>
 
               <FormGroup row>
@@ -138,7 +161,7 @@ render() {
               </FormGroup>
 
               <FormGroup row>
-                <Label sm={2}>Bank Name</Label>
+                <Label sm={2}>Nama Bank</Label>
                 <Col sm={10}>
                 <Select
                     value={selectedOption}
@@ -178,14 +201,18 @@ render() {
               </FormGroup>
 
               <FormGroup check row>
-                <Label check sm={4}>
-                <Col className="Col-btn-trx" sm={20}>
-                <Button className="btn trx" type="submit" disabled={!isEnabled}>Submit</Button>
+                <Label check sm={15}>
+                <Col sm={20}>
+                <Button outline type="submit" disabled={!isEnabled} size="lg" color="primary" >
+
+                Submit
+                </Button>
                 </Col>
                 </Label>
               </FormGroup>
 
             </Form>
+            
         </Container>
       </div>
     );

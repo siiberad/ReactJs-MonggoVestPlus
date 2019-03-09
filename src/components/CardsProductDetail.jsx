@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import '../assets/css/productdetail.css';
 import axios from 'axios';
 
-export default class Example extends React.Component {
+export default class CardsProductDetail extends React.Component {
   constructor(props) {
     super(props);
 
@@ -70,7 +70,10 @@ export default class Example extends React.Component {
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              <Col sm="6">
+              <Col sm="12">
+              Kambing Saanen berasal dari lembah Saanen, Swiss (Switzerland) bagian barat. Merupakan salah satu jenis kambing terbesar di Swiss dan penghasil susu kambing yang terkenal. 
+              Sulit berkembang di wilayah tropis karena kepekaannya terhadap matahari. Oleh karena itu di Indonesia jenis kambing ini disilangkan lagi dengan jenis kambing lain yang 
+              lebih resisten terhadap cuaca tropis dan tetap diberi nama kambing Saanen, antara lain dengan kambing peranakan etawa.
                 {/* <Card body>
                   <CardTitle></CardTitle>
                   <CardText></CardText>

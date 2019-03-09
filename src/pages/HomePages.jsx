@@ -12,9 +12,9 @@ import AppBanner from './AppBanner';
 import AppIcon from './AppIcon';
 
 
-class HomePages extends React.Component{
-    render(){
-        return(
+class HomePages extends React.Component {
+    render() {
+        return (
             <div>
                 <AppNavbar/>
                 <AppBanner/>
@@ -29,7 +29,6 @@ class HomePages extends React.Component{
                         </Row>
                     </Container>
                 </div>
-                <AppFooter/>
             </div>
         )
     }

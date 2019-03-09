@@ -3,7 +3,7 @@ import {
     Card, Button, CardHeader, CardFooter, CardBody,
     CardTitle, CardText, Row, Container, Col
 } from 'reactstrap';
-import CarouselProductDetail from './CarouselProductDetail';
+import CarouselProductDetail from './CarouselProductDetail1';
 import CardsProductDetail from './CardsProductDetail';
 import ModalProductInvestasi from './ModalProductInvestasi';
 
@@ -21,6 +21,7 @@ export default class ProductDetails extends Component {
     //     localStorage.getItem('JWT_TOKEN')
     //   }
     }
+    
 
     render() {
         return (
