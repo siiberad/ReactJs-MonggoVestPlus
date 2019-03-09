@@ -93,6 +93,9 @@ class AppNavbar extends Component {
                 <Link className='nav-app' to='/tentangkami'>Tentang Kami</Link>
               </NavItem>
               <NavItem>
+                <Link className='nav-app' to='/syarat'>Syarat dan Ketentuan</Link>
+              </NavItem>
+              <NavItem>
                 <Link className='nav-app' to='/bantuan'>Bantuan</Link>
               </NavItem>
               <NavItem>
