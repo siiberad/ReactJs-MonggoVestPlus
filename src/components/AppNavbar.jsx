@@ -108,9 +108,9 @@ class AppNavbar extends Component {
                   <Link id="bt-nav" to='/login'>Login</Link>
               </NavItem> */}
               <button id="bt-search" to='/search'>
-              <Link to='/search'>
-              <img src="https://res.cloudinary.com/monggovestplus/image/upload/v1552120428/icon_search.png" height="35" />
-              </Link>
+                <Link to='/search'>
+                  <img src="https://res.cloudinary.com/monggovestplus/image/upload/v1552120428/icon_search.png" height="35" />
+                </Link>
               </button>
             </Nav>
           </Collapse>
