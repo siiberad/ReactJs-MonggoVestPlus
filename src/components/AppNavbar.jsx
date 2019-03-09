@@ -6,10 +6,9 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-} from 'reactstrap';
+   } from 'reactstrap';
 import '../assets/scss/_navbarstyle.scss';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import store from 'store';
+import { BrowserRouter, Link } from "react-router-dom";
 import AppLoginRegistState from './AppLoginRegistState';
 import AppUserSetting from './AppUserSetting';
 
@@ -28,24 +27,24 @@ class AppNavbar extends Component {
 
     // this.navHiden = this.navHiden.bind(this);
 
-
-    //   if (typeof window !== 'undefined') {
-    //     let prevScrollpos = window.pageYOffset;
-    //     window.onscroll = function () {
-    //       const maxScroll = document.body.clientHeight - window.innerHeight;
-    //       let currentScrollPos = window.pageYOffset;
-    //       if (
-    //         (maxScroll > 0 && prevScrollpos > currentScrollPos && prevScrollpos <= maxScroll)
-    //         || (maxScroll <= 0 && prevScrollpos > currentScrollPos)
-    //         || (prevScrollpos <= 0 && currentScrollPos <= 0)
-    //       ) {
-    //         document.getElementById("navbar").style.top = "0";
-    //       } else {
-    //         document.getElementById("navbar").style.top = "-5.0rem";
-    //       }
-    //       prevScrollpos = currentScrollPos;
-    //     }
-    //   }
+    
+  //   if (typeof window !== 'undefined') {
+  //     let prevScrollpos = window.pageYOffset;
+  //     window.onscroll = function () {
+  //       const maxScroll = document.body.clientHeight - window.innerHeight;
+  //       let currentScrollPos = window.pageYOffset;
+  //       if (
+  //         (maxScroll > 0 && prevScrollpos > currentScrollPos && prevScrollpos <= maxScroll)
+  //         || (maxScroll <= 0 && prevScrollpos > currentScrollPos)
+  //         || (prevScrollpos <= 0 && currentScrollPos <= 0)
+  //       ) {
+  //         document.getElementById("navbar").style.top = "0";
+  //       } else {
+  //         document.getElementById("navbar").style.top = "-5.0rem";
+  //       }
+  //       prevScrollpos = currentScrollPos;
+  //     }
+  //   }
   }
 
   toggle() {
@@ -85,7 +84,7 @@ class AppNavbar extends Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link className='nav-app' to='/'>Investasi</Link>
+                <Link className='nav-app' to='/investasi'>Investasi</Link>
               </NavItem>
               <NavItem>
                 <Link className='nav-app' to='/carakerja'>Cara Kerja</Link>
@@ -101,11 +100,14 @@ class AppNavbar extends Component {
               {/* {this.state.isLoggedIn ?
                 (<AppLoginRegistState />) : (<AppUserSetting />)} */}
               </NavItem>
-              {/*<button id="bt-search" to='/search'>*/}
-              {/*<Link to='/search'>*/}
-              {/*<img src="https://cdn.pixabay.com/photo/2017/03/19/03/48/material-icon-2155442_1280.png" height="35" />*/}
-              {/*</Link>*/}
-              {/*</button>*/}
+              {/* <NavItem>
+                  <Link id="bt-nav" to='/login'>Login</Link>
+              </NavItem> */}
+              <button id="bt-search" to='/search'>
+              <Link to='/search'>
+              <img src="https://cdn.pixabay.com/photo/2017/03/19/03/48/material-icon-2155442_1280.png" height="35" />
+              </Link>
+              </button>
             </Nav>
           </Collapse>
         </Navbar>
