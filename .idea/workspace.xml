@@ -4,11 +4,9 @@
     <list default="true" id="ae1010c0-bb4c-404a-98b2-91e8297ece5f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CarouselProductDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CarouselProductDetail.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModalProductInvestasi.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModalProductInvestasi.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProductDetailsPage.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ProductDetailsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProductDetailsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppProfileEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppProfileEdit.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppTrx.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppTrx.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TrxPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TrxPage.jsx" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,13 +15,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="fullstack-web-frontend" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="68" column="13" selection-end-line="68" selection-end-column="25" />
+            <state relative-caret-position="1139">
+              <caret line="67" column="13" selection-end-line="67" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -42,7 +43,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dinda/logout" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
   </component>
@@ -121,7 +122,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550133816557" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552144410425" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -168,17 +169,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8495000" />
+    <option name="totallyTimeSpent" value="9951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1603631" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4979253" weight="0.1603631" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="Structure" order="5" sideWeight="0.5020747" side_tool="true" visible="true" weight="0.1603631" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -190,7 +191,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2244898" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.59013605" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.25" />
@@ -207,9 +208,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="270" height="652" key="Git.Branch.Popup" />
-    <state width="270" height="652" key="Git.Branch.Popup/1366.768" />
-    <state width="270" height="652" key="Git.Branch.Popup@1366.768" />
+    <state width="290" height="672" key="Git.Branch.Popup" />
+    <state width="290" height="672" key="Git.Branch.Popup/1366.768" />
+    <state width="290" height="672" key="Git.Branch.Popup@1366.768" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -256,8 +257,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="68" column="13" selection-end-line="68" selection-end-column="25" />
+        <state relative-caret-position="1139">
+          <caret line="67" column="13" selection-end-line="67" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
