@@ -109,12 +109,12 @@ class ModalProductInvestasi extends React.Component {
             Total Harga : <br />
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>
+            <Button  onClick={this.toggle}>
             <Link to="/transaction">
               Lanjutkan
             </Link>
             </Button>{" "}
-            <Button color="secondary" onClick={this.toggle}>
+            <Button  onClick={this.toggle}>
               Nanti saja
             </Button>
           </ModalFooter>
