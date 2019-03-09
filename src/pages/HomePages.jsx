@@ -29,6 +29,7 @@ class HomePages extends React.Component {
                         </Row>
                     </Container>
                 </div>
+                <AppFooter/>
             </div>
         )
     }

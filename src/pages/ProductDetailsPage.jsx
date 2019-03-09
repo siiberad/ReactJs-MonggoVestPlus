@@ -30,8 +30,8 @@ class ProductDetailsPage extends React.Component {
                 <ModalProductInvestasi productId={this.state.productId} />
               </Col>
             </Row>
-            <AppFooter />
           </Container>
+          <AppFooter />
         </div>
       )
     }

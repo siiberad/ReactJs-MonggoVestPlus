@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    UncontrolledDropdown,
     DropdownToggle,
     Dropdown,
     DropdownMenu,
@@ -30,7 +29,7 @@ class AppUserSetting extends React.Component {
                 <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                     <DropdownToggle className='custom-toggle' nav>
                         <Button id="bt-nav">
-                            Account
+                            AKUN
                         </Button>
                     </DropdownToggle>
                     <DropdownMenu right>

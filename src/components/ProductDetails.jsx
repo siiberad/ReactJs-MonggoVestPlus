@@ -54,7 +54,7 @@ class ProductDetails extends React.Component {
     return (
       <div>
         <AppNavbar />
-        <Container className="margin-form">
+        <Container className="margin-form productTitle">
           <h2>{this.state.productName}</h2>
           <h4>{this.state.productPrice}</h4>
           <Row>
@@ -104,11 +104,6 @@ class ProductDetails extends React.Component {
                   <Row>
                     <Col sm="12">
                       {this.state.productDetails}
-                      {/* <Card body>
-                        <CardTitle></CardTitle>
-                        <CardText></CardText>
-                        <Button></Button>
-                      </Card> */}
                     </Col>
                   </Row>
                 </TabPane>

@@ -17,6 +17,7 @@ import Search from './searchpage/Search';
 import AppResults from './searchpage/AppResults';
 import HomePages from './pages/HomePages';
 import Investasi from './pageinvestasi/Investasi';
+import SyaratKetentuan from './Syarat&Ketentuan/SyaratKetentuan'
 
 class AppRouter extends React.Component {
     render() {
@@ -37,6 +38,7 @@ class AppRouter extends React.Component {
                             <Route path='/results/:keyword' component={AppResults} />
                             <Route path='/homepage' component={HomePages} />
                             <Route path='/investasi' component={Investasi} />
+                            <Route path='/syarat' component={SyaratKetentuan} />
                         </div>
                     </LastLocationProvider>
                 </Router>

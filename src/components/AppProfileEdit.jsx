@@ -11,7 +11,6 @@ import store from "store";
 import "../assets/css/formstyle.css";
 import AppLoginRegistState from './AppLoginRegistState';
 import isLoggedIn from '../helpers/loggedIn';
-import { HashRouter } from 'react-router-dom';
 
 axios.defaults.baseURL = 'https://mgvplus.herokuapp.com'
 // axios.defaults.baseURL = 'http://localhost:8080'
@@ -136,7 +135,7 @@ export default class AppProfileEdit extends Component {
     return (
       <div>
         <Container className="margin-form">
-          <h2 align='center'>Lengkapi Profil</h2>
+          <h2 align='center'>Ubah Profil</h2>
           <Form onSubmit={this.submit}>
             <FormGroup>
               <Label>Nama Lengkap: </Label>

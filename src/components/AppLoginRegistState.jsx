@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button } from "reactstrap";
 import AppLoginModalBox from "./AppLoginModalBox";
 import AppRegistrationModal from "./AppRegistrationModal";
 import '../assets/scss/_loginregister.scss';

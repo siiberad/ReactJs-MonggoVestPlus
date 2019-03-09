@@ -6,9 +6,6 @@ import axios from 'axios';
 import Select from 'react-select';
 import options from "./BankName";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
-import ProfileEditPage from '../pages/ProfileEditPage';
-import completedProfile from '../helpers/completedProfile';
-import {Link} from 'react-router-dom';
 import 'sweetalert2/src/sweetalert2.scss'
 import "../assets/css/animate.css"
 import "../assets/scss/AppMain.scss"
