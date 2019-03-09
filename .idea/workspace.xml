@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae1010c0-bb4c-404a-98b2-91e8297ece5f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppLoginModalBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppLoginModalBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppLoginModalBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppRegistrationModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppRegistrationModal.jsx" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="39" column="13" selection-end-line="39" selection-end-column="25" />
+              <caret line="50" column="13" selection-end-line="50" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -47,8 +44,8 @@
         <option value="$PROJECT_DIR$/src/pages/TrxPage.jsx" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/components/AppNavbar.jsx" />
         <option value="$PROJECT_DIR$/src/AppRouter.jsx" />
+        <option value="$PROJECT_DIR$/src/components/AppNavbar.jsx" />
       </list>
     </option>
   </component>
@@ -64,7 +61,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -92,6 +88,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -139,16 +136,17 @@
       <workItem from="1551798314061" duration="345000" />
       <workItem from="1551896036605" duration="13000" />
       <workItem from="1551942254614" duration="234000" />
+      <workItem from="1552105763749" duration="634000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4680000" />
+    <option name="totallyTimeSpent" value="6028000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15582451" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1580938" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -182,9 +180,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="258" height="640" key="Git.Branch.Popup" />
-    <state width="258" height="640" key="Git.Branch.Popup/1366.768" />
-    <state width="258" height="640" key="Git.Branch.Popup@1366.768" />
+    <state width="264" height="646" key="Git.Branch.Popup" />
+    <state width="264" height="646" key="Git.Branch.Popup/1366.768" />
+    <state width="264" height="646" key="Git.Branch.Popup@1366.768" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -213,7 +211,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="39" column="13" selection-end-line="39" selection-end-column="25" />
+          <caret line="50" column="13" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>
