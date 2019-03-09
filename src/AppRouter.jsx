@@ -15,6 +15,7 @@ import AllProductPage from './pages/AllProductPage';
 import ProfileEditPage from './pages/ProfileEditPage';
 import Search from './searchpage/Search';
 import AppResults from './searchpage/AppResults';
+import SyaratKetentuan from './Syarat&Ketentuan/SyaratKetentuan';
 import AppLoginRegistState from './components/AppLoginRegistState';
 import HomePages from './pages/HomePages';
 import Investasi from './pageinvestasi/Investasi';
@@ -35,7 +36,7 @@ class AppRouter extends React.Component{
                 <Router>
                     <LastLocationProvider>
                             <div>
-                                <Route exact path='/' component={App}  />
+                                <Route exact path='/' component={App}/>
                                 <Route path='/tentangkami' component={TentangKami}  />
                                 <Route path='/bantuan' component={Bantuan}  />
                                 <Route path='/carakerja' component={CaraKerja}  />
@@ -53,6 +54,7 @@ class AppRouter extends React.Component{
                                 <Route path='/transaction' component={TrxPage}  />
                                 <Route path='/profile/edit' component={ProfileEditPage} />
                                 <Route path='/search' component={Search} />
+                                <Route path='/syarat' component={SyaratKetentuan}  />
                                 <Route path='/results' component={AppResults} />
                                 <Route path='/homepage' component={HomePages} />
                                 <Route path='/investasi' component={Investasi} />

@@ -11,6 +11,10 @@ class AppHome extends React.Component {
               <AppNavbar/> <br/> <br/> <br/>
             <ProductDetails/> <br/>
             <AppFooter/>
+              <AppNavbar />
+              <Container>
+                <ProductDetails/>
+              </Container>
             </div>
           )
       }
