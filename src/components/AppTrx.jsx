@@ -9,12 +9,14 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 import "../assets/css/animate.css"
 import "../assets/scss/AppMain.scss"
-import { Link } from 'react-router-dom';
+
 
 class AppTrx extends React.Component {
   constructor(props) {
     super(props);
+    
     this.onLot = this.onLot.bind(this);
+    // this.hitungLot = this.hitungLot.bind(this);
     this.onRek = this.onRek.bind(this);
     this.onBankName = this.onBankName.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -22,9 +24,9 @@ class AppTrx extends React.Component {
     
 
     this.state = {
-        userId: '',
         productModel: '',
         lotTaken:'',
+        hitung:0,
         noRekening: '',
         bankModel: '',
         selectedOption: '',
@@ -35,6 +37,10 @@ class AppTrx extends React.Component {
 onLot(lotTaken) {
   this.setState({
     lotTaken: lotTaken.target.value
+    });
+
+  this.setState({
+    hitung: lotTaken.target.value * 500000
     });
 }
 onRek(noRekening) {
@@ -62,11 +68,25 @@ handleChecked = () => {
 }
 
 componentDidMount() {
-  axios.get(`https://mgvplus.herokuapp.com/products/4`).then(response => {
+  axios.get(`https://mgvplus.herokuapp.com/products/${this.props.productId}`).then(response => {
       const productName = response.data.productName;
       const productPrice = response.data.productPrice;
       this.setState({productName, productPrice});
   });
+
+  const token = localStorage.getItem('JWT_TOKEN')
+  const tokenParts = token.split('.');
+  const encodedPayload = tokenParts[1];
+  const rawPayload = atob(encodedPayload);
+  const user = JSON.parse(rawPayload);    
+  const userId = user.userId
+
+  axios.get(`https://mgvplus.herokuapp.com/user/${userId}`,{ headers: { "Authorization": token } }).then(res => 
+  {
+      const userEmail = res.data.userEmail;
+      this.setState({userEmail});
+  }
+  );
 }
 
 onSubmit(e) {
@@ -80,7 +100,7 @@ onSubmit(e) {
     let bankModel = parseInt(this.state.selectedOption.value, 10)
   
     e.preventDefault();
-    axios.post(`https://mgvplus.herokuapp.com/users/${userId}/transactions?productModel=3&bankModel=${bankModel}`, 
+    axios.post(`https://mgvplus.herokuapp.com/users/${userId}/transactions?productModel=${this.props.productId}&bankModel=${bankModel}`, 
     {
     lotTaken: parseInt(this.state.lotTaken, 10),
     noRekening: this.state.noRekening 
@@ -99,12 +119,13 @@ onSubmit(e) {
       
       Swal.fire({
         title: 'Invoice dan Agreement',
-        text:'Invoice dan Agreement telah dikirim, Silahkan Cek Email Anda',
+        text:'Invoice dan Agreement telah dikirim ke ' + this.state.userEmail,
         animation: false,
         customClass: 'animated bounceInDown'
       }).then(function() {
-        window.location = "/allproduct";
-    });
+        window.location = "/allproduct"; //will redirect to your blog page (an ex: blog.html)
+      }, 5000); //will call the function after 2 secs.
+      
 }
 
 canBeSubmitted() {
@@ -114,17 +135,17 @@ canBeSubmitted() {
 
 render() {
     const isEnabled = this.canBeSubmitted();
-    const { selectedOption } = this.state;
+    const { selectedOption, hitung } = this.state;
     return (
       <div>
-        <Container className="margin-form" class="col-sm-6">
+        <Container className="margin-form">
             <Form onSubmit={this.onSubmit}>
 
               <FormGroup row>
                 <Label sm={2}>Nama Produk</Label>
                 <Col sm={10}>
                 <Input
-                    disabled="true"
+                    disabled={true}
                     type= 'text'
                     className="form-control"
                     placeholder={this.state.productName}
@@ -137,7 +158,7 @@ render() {
                 <Label sm={2}>Harga Produk</Label>
                 <Col sm={10}>
                 <Input
-                    disabled="true"
+                    disabled={true}
                     type= 'text'
                     className="form-control"
                     placeholder={this.state.productPrice}
@@ -161,6 +182,20 @@ render() {
               </FormGroup>
 
               <FormGroup row>
+                <Label sm={2}>Harga yang Dibayar</Label>
+                <Col sm={10}>
+                <Input
+                    disabled={true}
+                    type= 'text'
+                    className="form-control"
+                    value={this.state.hitung}
+                    onChange={this.onLot}
+                    >
+                </Input>
+                </Col>
+              </FormGroup>
+
+              <FormGroup row>
                 <Label sm={2}>Nama Bank</Label>
                 <Col sm={10}>
                 <Select
@@ -177,10 +212,9 @@ render() {
                 <Col sm={10}>
                   <Input
                     placeholder="Masukkan Nomor Rekening Anda ..."
-                    className="form-control"
+                    className="form-control no-spinners"
                     value={this.state.noRekening}
                     onChange={this.onRek}
-                    className="no-spinners"
                     type="number"
                     >
                   </Input>
@@ -191,7 +225,7 @@ render() {
                 <Label check sm={4}>
                 <Col sm={10}>
                 <Input
-                    type="checkbox"
+                    type="checkbox" 
                     checked={this.state.check}
                     onChange={this.handleChecked}
                     />{' '}
@@ -201,8 +235,8 @@ render() {
               </FormGroup>
 
               <FormGroup check row>
-                <Label check sm={15}>
-                <Col sm={20}>
+                <Label check sm={4}>
+                <Col sm={10}>
                 <Button outline type="submit" disabled={!isEnabled} size="lg" color="primary" >
 
                 Submit

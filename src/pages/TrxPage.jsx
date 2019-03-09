@@ -4,12 +4,20 @@ import AppTrx from '../components/AppTrx';
 import "../assets/css/Trx.css"
 import {Container} from'reactstrap';
 class TrxPage extends React.Component {
+  constructor(props){
+  super(props)
+  this.state={
+    productId : this.props.match.params.productId
+  }
+}
       render() {
-          return(
+        
+        return(
+  
             <div>
               <AppNavbar />
               <Container>
-                <AppTrx/>
+                <AppTrx productId={this.state.productId}/>
               </Container>
             </div>
           )
