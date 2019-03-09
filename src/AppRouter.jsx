@@ -41,17 +41,17 @@ class AppRouter extends React.Component{
                                 <Route path='/bantuan' component={Bantuan}  />
                                 <Route path='/carakerja' component={CaraKerja}  />
                                 <Route exact path='/allproduct' component={AllProductPage}  />
-                                <Route path="/product-details/1" component={ProductDetails1} />
-                                <Route path="/product-details/2" component={ProductDetails2} />
-                                <Route path="/product-details/3" component={ProductDetails3} />
-                                <Route path="/product-details/4" component={ProductDetails4} />
-                                <Route path="/product-details/5" component={ProductDetails5} />
-                                <Route path="/product-details/6" component={ProductDetails6} />
-                                <Route path="/product-details/7" component={ProductDetails7} />
-                                <Route path="/product-details/8" component={ProductDetails8} />
-                                <Route path="/product-details/9" component={ProductDetails9} />
-                        {/* <Route path="/product-details/:id" component={ProductDetailsPage} /> */}
-                                <Route exact path='/transaction/:productId' component={TrxPage}  />
+                                {/* <Route path="/product-details" component={ProductDetails1} /> */}
+                        {/* <Route path="/product-details/2" component={ProductDetails2} />
+                        <Route path="/product-details/3" component={ProductDetails3} />
+                        <Route path="/product-details/4" component={ProductDetails4} />
+                        <Route path="/product-details/5" component={ProductDetails5} />
+                        <Route path="/product-details/6" component={ProductDetails6} />
+                        <Route path="/product-details/7" component={ProductDetails7} />
+                        <Route path="/product-details/8" component={ProductDetails8} />
+                        <Route path="/product-details/9" component={ProductDetails9} /> */}
+                        <Route path="/product-details/:productId" component={ProductDetailsPage} />
+                                <Route path='/transaction' component={TrxPage}  />
                                 <Route path='/profile/edit' component={ProfileEditPage} />
                                 <Route path='/search' component={Search} />
                                 <Route path='/syarat' component={SyaratKetentuan}  />
