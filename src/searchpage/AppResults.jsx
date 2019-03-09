@@ -5,6 +5,7 @@ import AppNavbar from '../components/AppNavbar';
 import AppSearch from './AppSearch';
 import Axios from 'axios';
 import '../assets/scss/_results.scss';
+import { Link } from 'react-router-dom';
 
 class AppResults extends React.Component {
     constructor(props){
@@ -39,7 +40,11 @@ class AppResults extends React.Component {
                             {
                                 this.state.result.map((lol, index) => 
                                 <CardBody>
-                                    <CardTitle>{lol.productName}</CardTitle>
+                                    <CardTitle>
+                                    <Link to="/allproduct">
+                                    {lol.productName}
+                                    </Link>
+                                    </CardTitle>
                                         <CardSubtitle>Card subtitle</CardSubtitle>
                                             <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
                                 </CardBody>
