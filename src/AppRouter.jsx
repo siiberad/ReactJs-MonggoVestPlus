@@ -35,7 +35,7 @@ class AppRouter extends React.Component{
                                 <Route path='/transaction' component={TrxPage}  />
                                 <Route path='/profile/edit' component={ProfileEditPage} />
                                 <Route path='/search' component={Search} />
-                                <Route path='/results' component={AppResults} />
+                                <Route path='/results/:keyword' component={AppResults} />
                                 <Route path='/homepage' component={HomePages} />
                                 <Route path='/investasi' component={Investasi} />
                             </div>

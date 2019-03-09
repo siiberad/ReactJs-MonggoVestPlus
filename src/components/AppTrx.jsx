@@ -179,8 +179,8 @@ render() {
 
               <FormGroup check row>
                 <Label check sm={4}>
-                <Col sm={20}>
-                <Button type="submit" disabled={!isEnabled}>Submit</Button>
+                <Col className="Col-btn-trx" sm={20}>
+                <Button className="btn trx" type="submit" disabled={!isEnabled}>Submit</Button>
                 </Col>
                 </Label>
               </FormGroup>

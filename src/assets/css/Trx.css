@@ -21,3 +21,17 @@
     -webkit-appearance: none;
     margin: 0;
   }
+
+  .Col-btn-trx{
+      
+  }
+
+
+
+.btn trx {
+    color: aqua !important;
+}
+
+.btntrx:hover {
+    -webkit-animation: none;
+}

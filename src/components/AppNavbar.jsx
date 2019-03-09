@@ -76,7 +76,7 @@ class AppNavbar extends Component {
               </NavItem> */}
               <button id="bt-search" to='/search'>
                 <Link to='/search'>
-                  <img src="https://cdn.pixabay.com/photo/2017/03/19/03/48/material-icon-2155442_1280.png" height="35" />
+                  <img src="https://res.cloudinary.com/monggovestplus/image/upload/v1552120428/icon_search.png" height="35" />
                 </Link>
               </button>
             </Nav>
