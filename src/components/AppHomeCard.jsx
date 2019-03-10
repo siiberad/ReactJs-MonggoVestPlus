@@ -2,7 +2,7 @@ import React, { Component }  from 'react';
 import { Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button, Row, Col, CardText, Container } from 'reactstrap';
 import '../assets/css/cardstyle.css';
-import GetAllCards from './GetAllCards';
+import GetAllCards from '../pageinvestasi/GetAllCards';
 
 import axios from 'axios';
 class AppHomeCard extends Component{

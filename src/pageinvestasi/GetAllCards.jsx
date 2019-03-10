@@ -24,7 +24,7 @@ class GetAllCards extends Component {
             <CardTitle>{name}</CardTitle>
             <CardSubtitle>{province}</CardSubtitle>
             <CardText ><b><Currency quantity={harga} currency="IDR" locale="id_ID"  /></b></CardText>
-            <Buttoncolor="primary">
+            <Button color="primary">
               Lihat
               </Button>
           </CardBody>
