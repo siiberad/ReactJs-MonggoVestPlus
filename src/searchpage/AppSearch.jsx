@@ -85,7 +85,7 @@ class AppSearch extends React.Component {
                 <Form className="search-form">
          
                     <FormGroup>
-                        <Label className="label-search" for="search-web" hidden>Search</Label>
+                        {/* <Label className="label-search" for="search-web" hidden>Search</Label> */}
                             <Search className="input-search"
                             type="search"  
                             onChange={this.onProductName}
@@ -102,7 +102,9 @@ class AppSearch extends React.Component {
                             {/* <Suggestions hasil={this.state.hasil} /> */}
                             {/* <p>{this.state.productName}</p> */}
                     </FormGroup>
-                        <Back/>
+                        <div className="kembali-buttons">
+                            <Back/>
+                        </div>
                 </Form>
             </Container>
         </div>
