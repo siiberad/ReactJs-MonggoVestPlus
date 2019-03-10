@@ -33,20 +33,21 @@ class AppRouter extends React.Component{
                         <Route path='/tentangkami' component={TentangKami}  />
                         <Route path='/bantuan' component={Bantuan}  />
                         <Route path='/carakerja' component={CaraKerja}  />
-                        <Route path="/product-details/1" component={ProductDetails1} />
+                        {/* <Route path="/product-details/1" component={ProductDetails1} />
                         <Route path="/product-details/2" component={ProductDetails2} />
                         <Route path="/product-details/3" component={ProductDetails3} />
                         <Route path="/product-details/4" component={ProductDetails4} />
                         <Route path="/product-details/5" component={ProductDetails5} />
                         <Route path="/product-details/6" component={ProductDetails6} />
-                        <Route path="/product-details/7" component={ProductDetails7} />
-                        <Route path="/product-details/8" component={ProductDetails8} />
-                        <Route path="/product-details/9" component={ProductDetails9} />
+                        <Route path="/product-details/7" component={ProductDetails7} /> */}
+                        {/* <Route path="/product-details/8" component={ProductDetails8} /> */}
+                        {/* <Route path="/product-details/9" component={ProductDetails9} /> */}
+                        <Route path="/product-details/:proId" component={ProductDetails9} />
                         <Route path='/transaction' component={TrxPage}  />
                         <Route exact path='/profile/edit' component={ProfileEditPage} />
                         <Route exact path='/search' component={Search} />
                         <Route exact path='/results' component={AppResults} />
-                        <Route exact path='/allproduct' component={AllProductPage}  />
+                        <Route exact path='/allproduct/:group/:order(hargaModal|productId)/:arah(ASC|DESC)/:nomorhalaman' component={AllProductPage}  />
                         
                         
                     </div>

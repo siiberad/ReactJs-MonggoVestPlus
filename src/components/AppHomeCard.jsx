@@ -5,7 +5,7 @@ import '../assets/css/cardstyle.css';
 import GetAllCards from './GetAllCards';
 
 import axios from 'axios';
-class AppCardAll extends Component{
+class AppHomeCard extends Component{
     constructor(props) {
         super(props)
         this.state = {
@@ -30,7 +30,7 @@ class AppCardAll extends Component{
 
     loadData = (params) =>{
       console.log("data match", params);
-             axios.get(`/pagination/conditionalPagination?groupedBy=${params.group}&orderBy=${params.order}&direction=${params.arah}&page=${params.nomorhalaman}&size=9`)
+             axios.get(`/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=3`)
       // axios.get("https://mgvplus.herokuapp.com/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=6")  
           .then(response =>
               response.data.content.map(product => ({
@@ -72,4 +72,4 @@ class AppCardAll extends Component{
 }
 
 
-export default AppCardAll;
+export default AppHomeCard;

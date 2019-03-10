@@ -12,6 +12,7 @@ export default class ProductDetails extends Component {
         super(props);
   
     // componentDidMount() {
+        
     //     let productId = localStorage.getItem('JWT_TOKEN')
     //     axios.get(`https://mgvplus.herokuapp.com/products/${productId}`).then(response => {
     //         const productName = response.data.productName;

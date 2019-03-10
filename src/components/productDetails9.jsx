@@ -11,7 +11,7 @@ import {Container} from'reactstrap';
 import classnames from 'classnames';
 import '../assets/css/productdetail.css';
 import axios from 'axios';
-import CarouselProductDetail9 from './CarouselProductDetail9'
+import CarouselProductDetail8 from './CarouselProductDetail8'
 import ModalProductInvestasi from './ModalProductInvestasi';
 import AppNavbar from './AppNavbar';
 import AppFooter from './AppFooter';
@@ -21,12 +21,14 @@ class productDetails9 extends React.Component {
   constructor(props) {
     super(props);
     this.toggle = this.toggle.bind(this);
-    
+    const { match: { params } } = this.props;
     this.state = {
         productModel: '',
-        productId: 9,
         activeTab: '1',  
-        products: []
+        products: [],
+        prod:{
+          productId:params.proId
+        }
     }
 }
 
@@ -41,8 +43,11 @@ toggle(tab) {
 // ----------------------------------------------------------------
 
 componentDidMount() {
-    let productId = this.state.productId;
-    axios.get(`https://mgvplus.herokuapp.com/products/${productId}`).then(response => {
+  const { match: { params } } = this.props;
+  console.log("data match", params);
+    // let productId = this.state.productId;
+    axios.get(`https://mgvplus.herokuapp.com/products/${params.proId}`).then(response => {
+      const productId = response.data.productId;
       const productName = response.data.productName;
       const productPrice = response.data.productPrice;
       const returnOfInvestment = response.data.returnOfInvestment;
@@ -51,7 +56,7 @@ componentDidMount() {
       const productDetails = response.data.productDetails;
       // const productPrice = response.data.;
       // const productPrice = response.data.productPrice;
-      this.setState({productName, productPrice, returnOfInvestment, contractPeriodInMonth, jumlahTernak, productDetails});
+      this.setState({productId,productName, productPrice, returnOfInvestment, contractPeriodInMonth, jumlahTernak, productDetails});
   });
 }
 
@@ -65,7 +70,7 @@ render() {
           <h4>{this.state.productPrice}</h4>
                 <Row>
                     <Col xs="6">
-                        <CarouselProductDetail9 />
+                        <CarouselProductDetail8 makanan={this.state.prod}/>
                     </Col>
                     <Col xs="6">
                     <Nav tabs>
