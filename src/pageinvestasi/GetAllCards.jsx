@@ -3,7 +3,6 @@ import { Card, CardImg, CardText, CardBody,
 CardTitle, CardSubtitle, Button } from 'reactstrap';
 import '../assets/scss/_cardstyle.scss';
 import {Link} from 'react-router-dom';
-import Currency from 'react-currency-formatter';
 
 class GetAllCards extends Component {
   constructor(props) {
@@ -23,7 +22,7 @@ class GetAllCards extends Component {
           <CardBody className="card-body"  style={{  borderColor: '#333' }}>
             <CardTitle>{name}</CardTitle>
             <CardSubtitle>{province}</CardSubtitle>
-            <CardText ><b><Currency quantity={harga} currency="IDR" locale="id_ID"  /></b></CardText>
+            <CardText ><b>{harga}</b></CardText>
             <Button color="primary">
               Lihat
               </Button>
