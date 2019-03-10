@@ -57,7 +57,7 @@ class AppTrx extends React.Component {
       title: 'Persetujuan',
       html:
         'Dengan ini anda setuju dengan ' +
-        '<a href="http://localhost:3000/syarat">Syarat dan Ketentuan</a> ' +
+        '<a href="https://mgvplus.herokuapp.com/syarat">Syarat dan Ketentuan</a> ' +
         'yang berlaku.',
       animation: false,
       customClass: 'animated bounceInUp',
@@ -98,7 +98,7 @@ class AppTrx extends React.Component {
     e.preventDefault();
     axios.post(`https://mgvplus.herokuapp.com/users/${userId}/transactions?productModel=${this.props.productId}&bankModel=${bankModel}`,
       {
-        lotTaken: parseInt(this.state.lotTaken, 10),
+        lotTaken: this.props.lotTaken,
         noRekening: this.state.noRekening
       },
 
@@ -132,13 +132,6 @@ class AppTrx extends React.Component {
   render() {
     const isEnabled = this.canBeSubmitted();
     const { selectedOption, hitung } = this.state;
-    // if (!isLoggedIn()) {
-    //   return <AppLoginRegistState checkAuth={()=>{window.location = '/profile/edit'}} modalLogin={true}/>
-    //   // <Redirect to='/target' />
-    // }
-    // if (completedProfile !== true) {
-    //     return  window.location = `/profile/edit`
-    // }
     return (
       <div>
         <Container className="margin-form">

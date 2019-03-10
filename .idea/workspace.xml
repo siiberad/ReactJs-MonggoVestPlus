@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ae1010c0-bb4c-404a-98b2-91e8297ece5f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppRouter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppRouter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppProfileEdit.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppProfileEdit.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AppTrx.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AppTrx.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TrxPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TrxPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1139">
-              <caret line="67" column="13" selection-end-line="67" selection-end-column="25" />
+            <state relative-caret-position="799">
+              <caret line="49" column="13" selection-end-line="49" selection-end-column="25" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -61,7 +59,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="y" value="2" />
     <option name="width" value="1378" />
@@ -69,54 +67,10 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="fullstack-web-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fullstack-web-frontend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fullstack-web-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fullstack-web-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fullstack-web-frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="fullstack-web-frontend" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="fullstack-web-frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="fullstack-web-frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="fullstack-web-frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="fullstack-web-frontend" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-            <path>
-              <item name="fullstack-web-frontend" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="fullstack-web-frontend" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
@@ -165,21 +119,22 @@
       <workItem from="1551942254614" duration="234000" />
       <workItem from="1552105763749" duration="634000" />
       <workItem from="1552131495114" duration="1560000" />
+      <workItem from="1552152201005" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9951000" />
+    <option name="totallyTimeSpent" value="10550000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4979253" weight="0.1603631" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
-      <window_info id="Structure" order="5" sideWeight="0.5020747" side_tool="true" visible="true" weight="0.1603631" />
+      <window_info id="Structure" order="5" sideWeight="0.5020747" side_tool="true" visible="true" weight="0.16263238" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -257,8 +212,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppRouter.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="13" selection-end-line="67" selection-end-column="25" />
+        <state relative-caret-position="799">
+          <caret line="49" column="13" selection-end-line="49" selection-end-column="25" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
