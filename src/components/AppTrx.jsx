@@ -117,7 +117,7 @@ class AppTrx extends React.Component {
       animation: false,
       customClass: 'animated bounceInDown'
     }).then(function () {
-      window.location = "/allproduct"; 
+      window.location = "/"; 
     }, 5000);
 
   }
@@ -189,8 +189,6 @@ class AppTrx extends React.Component {
               </Col>
             </FormGroup>
 
-            <h4>-------------------------------------------------------------------------------------------------------------------------------------------------------------</h4>
-
             <FormGroup row>
               <Label sm={2}>Nama Bank</Label>
               <Col sm={10}>
@@ -225,7 +223,7 @@ class AppTrx extends React.Component {
                     checked={this.state.check}
                     onChange={this.handleChecked}
                   />{' '}
-                  Check me out
+                  persetujuan
                 </Col>
               </Label>
             </FormGroup>

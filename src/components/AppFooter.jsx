@@ -18,7 +18,7 @@ class AppFooter extends Component {
                 <CardFooter>
                         <ul className="ul-footer">
                             <li className="text-footer">
-                            <a className="link-footer" href='/investasi'>Investasi</a>
+                            <a className="link-footer" href='/'>Investasi</a>
                             </li>
                             <li className="text-footer">
                             <a className="link-footer" href='/carakerja'>Cara Kerja</a>

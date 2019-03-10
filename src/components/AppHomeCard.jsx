@@ -37,7 +37,7 @@ class AppHomeCard extends Component{
                   id: `${product.productId}` ,
                 name: `${product.productName}` ,
                 province: `${product.provinceModel.provinceName}`,
-                harga: `${product.hargaModal}`,
+                harga: `${product.productPrice}`,
                 image: `${product.productImage1}`
               }))
             )
