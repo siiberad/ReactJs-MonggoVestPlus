@@ -1,0 +1,39 @@
+.div-footer {
+    margin-top: 5vh;
+    text-align: center;
+    background: linear-gradient(to right, #0A3565, #1782D9);
+
+    .row-footer {
+        display: inline-block;
+        justify-content: center;
+    }
+
+    .logo-footer {
+        padding-top: 20px;
+    }
+
+    .copyright-footer {
+        padding-top: 2rem;
+        color: white;
+    }
+
+}
+
+.ul-footer {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+
+    .text-footer {
+        padding-left: 20px;
+        color: white;
+    }
+
+    .link-footer {
+        color: white;
+
+        &:hover {
+            color: wheat;
+        }
+    }
+}
