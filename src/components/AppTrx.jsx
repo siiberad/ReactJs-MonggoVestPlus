@@ -9,15 +9,13 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 import "../assets/css/animate.css"
 import "../assets/scss/AppMain.scss"
-
-
+import NumberFormat from 'react-number-format';
 
 class AppTrx extends React.Component {
   constructor(props) {
     super(props);
 
     this.onLot = this.onLot.bind(this);
-    // this.hitungLot = this.hitungLot.bind(this);
     this.onRek = this.onRek.bind(this);
     this.onBankName = this.onBankName.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -35,7 +33,7 @@ class AppTrx extends React.Component {
     }
   }
 
-  onLot(lotTaken) {
+  onLot() {
     this.setState({
       lotTaken: this.props.lotTaken
     });
@@ -119,8 +117,8 @@ class AppTrx extends React.Component {
       animation: false,
       customClass: 'animated bounceInDown'
     }).then(function () {
-      window.location = "/allproduct"; //will redirect to your blog page (an ex: blog.html)
-    }, 5000); //will call the function after 2 secs.
+      window.location = "/allproduct"; 
+    }, 5000);
 
   }
 
@@ -131,7 +129,7 @@ class AppTrx extends React.Component {
 
   render() {
     const isEnabled = this.canBeSubmitted();
-    const { selectedOption, hitung } = this.state;
+    const { selectedOption} = this.state;
     return (
       <div>
         <Container className="margin-form">
@@ -167,7 +165,7 @@ class AppTrx extends React.Component {
               <Label sm={2}>Lot Diambil</Label>
               <Col sm={10}>
                 <Input
-                  // disabled="true"
+                  disabled={true}
                   type='text'
                   className="form-control"
                   value={this.props.lotTaken}
@@ -180,16 +178,18 @@ class AppTrx extends React.Component {
             <FormGroup row>
               <Label sm={2}>Harga yang Dibayar</Label>
               <Col sm={10}>
-                <Input
+              <NumberFormat 
+                  prefix={'Rp. '}
+                  thousandSeparator={'.'} 
+                  decimalSeparator={','}
                   disabled={true}
-                  type='text'
                   className="form-control"
                   value={this.state.hitung}
-                  onChange={this.onLot}
-                >
-                </Input>
+                />
               </Col>
             </FormGroup>
+
+            <h4>-------------------------------------------------------------------------------------------------------------------------------------------------------------</h4>
 
             <FormGroup row>
               <Label sm={2}>Nama Bank</Label>
@@ -234,15 +234,12 @@ class AppTrx extends React.Component {
               <Label check sm={4}>
                 <Col sm={10}>
                   <Button outline type="submit" disabled={!isEnabled} size="lg" color="primary" >
-
                     Submit
-                </Button>
+                  </Button>
                 </Col>
               </Label>
             </FormGroup>
-
           </Form>
-
         </Container>
       </div>
     );
