@@ -1,0 +1,43 @@
+.bt-card{
+   
+    border-radius: 30px;
+     color: blue;
+     padding: 6px;
+    
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     width: 150px;
+     margin: auto;    
+     border-color: blue;
+     background: white;
+ }
+ 
+  
+ .bt-card:hover {
+     color: #fff;
+     background-color:#0A3565;
+     border-color:#0A3565;
+ }
+
+ .row-card {
+     padding-top: 30px;
+ }
+
+ /* .bg-card {
+     border-radius: 0;
+ } */
+
+ .cd-card {
+     padding-top: 20px;
+ }
+ 
+ .card-body {
+     text-align: center;
+     
+ }
+
+.CardTitle {
+     text-align: center;
+ }

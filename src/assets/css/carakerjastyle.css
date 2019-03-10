@@ -1,0 +1,80 @@
+/* .bt-card{
+   
+    border-radius: 30px;
+     color: blue;
+     padding: 6px;
+    
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     width: 150px;
+     margin: auto;    
+     border-color: blue;
+     background: white;
+ }
+ 
+  
+ .bt-card:hover {
+     color: #fff;
+     background-color:#0A3565;
+     border-color:#0A3565;
+ }
+
+ .row-card {
+     padding-top: 30px;
+ }
+
+ .cd-card {
+     padding-top: 20px;
+ }
+ 
+ .card-body {
+     text-align: center;
+ }
+
+.CardTitle {
+     text-align: center;
+ } */
+
+
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+.container-carakerja {
+    margin-bottom: 50px;
+}
+
+
+ .h2-header-card {
+    margin-top: 40px;
+   text-align: center;
+}
+
+
+.col-card-carakerja {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    border-radius: calc(.25rem - 1px);
+}
+
+
+.row-card {
+   position: relative;
+   display: flex;
+}
+
+
+.bg-card {
+   border-radius: 100%;
+   border: 0;
+}

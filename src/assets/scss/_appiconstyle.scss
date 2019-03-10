@@ -1,0 +1,126 @@
+
+
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.div-appicon {
+    display: block;
+    margin-top: 10vh;
+    max-width: 100%;
+    text-align: center;
+
+    .h2-icon {
+        margin-top: 40px;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: inline-block;
+        background-image: linear-gradient(to right, #1782d9, #0a3565);
+        -webkit-background-clip: text;
+        color: transparent;
+        // letter-spacing: .2rem;
+        // transition: all .2s;
+
+        // &:hover {
+        //     transform: scale(1.03);
+        //     text-shadow: 1rem 1rem 2rem gray;
+        // }
+    }
+
+    .container-icon {
+        position: relative;
+        justify-content: center;
+        margin-bottom: 10vh;
+    }
+
+    .container-icon::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+
+
+    @media screen and (max-width: 992px) {
+        .cardbox {
+          width: 100%;
+          display: list-item;
+        }
+    }
+
+    @media screen and (max-width: 540px) {
+        .container-icon {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .cardbox {
+            width: 100%;
+            // margin: 45px !important;
+            display: inline-block;
+        }
+        .row-card {
+            display: inline-block;
+        }
+    }
+
+
+    .row-card {
+        
+        margin-top: 5vh;
+     }
+
+
+    .cardbox {
+        // width: 100%;
+        padding: 20px;
+        float: left;
+        display: block;
+        margin: auto;
+        border:0;
+        text-align: center;
+
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(1.1);
+            text-shadow: 1rem 1rem 2rem gray;
+        }
+    }
+
+    // .bg-card {
+    //     transition: all .2s;
+
+    //     &:hover {
+    //         transform: scale(1.1);
+    //         text-shadow: 1rem 1rem 2rem gray;
+    //     }
+    // }
+
+
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
