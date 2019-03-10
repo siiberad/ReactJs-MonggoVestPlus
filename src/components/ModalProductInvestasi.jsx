@@ -14,7 +14,6 @@ import axios from 'axios';
 import {
   Link
 } from "react-router-dom";
-import AppTrx from "./AppTrx";
 
 class ModalProductInvestasi extends React.Component {
   constructor(props) {
@@ -81,17 +80,17 @@ class ModalProductInvestasi extends React.Component {
                 <Input
                   id="lotInputBox"
                   type="number"
-                  placeholder="0"
+                  placeholder="1"
                   value={this.state.lotTaken}
                   onChange={this.handleChange}
                 >
-                  0
+                  1
                 </Input>
               </Col>
               <Col sm={9}>
                 <Input
                   type="range"
-                  min="0"
+                  min="1"
                   max= {jumlahTotalLot}
                   value={this.state.lotTaken}
                   step="1"
@@ -106,8 +105,8 @@ class ModalProductInvestasi extends React.Component {
             <a> Total Harga : Rp {totalBayar} </a><br/>
           </ModalBody>
           <ModalFooter>
-            <Button  onClick={this.toggle}>
-            <Link to={{ pathname: `/transaction/${this.props.productId}`,state: { lotTaken: this.state.lotTaken}}}>
+            <Button color="primary" onClick={this.toggle}>
+            <Link to={{ pathname: `/transaction/${this.props.productId}`,state: { lotTaken: this.state.lotTaken}}} style={{ color: '#FFF' }}>
             Lanjutkan
             </Link>
             </Button>{" "}

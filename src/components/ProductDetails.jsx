@@ -54,12 +54,14 @@ class ProductDetails extends React.Component {
     return (
       <div>
         <AppNavbar />
-        <Container className="margin-form productTitle">
-          <h2>{this.state.productName}</h2>
-          <h4>{this.state.productPrice}</h4>
+        <Container className="margin-form">
+          <Container className="productTitle">
+            <h2>{this.state.productName}</h2>
+            <h4>{this.state.productPrice}</h4>
+          </Container>
           <Row>
             <Col xs="6">
-              <CarouselProductDetail productId={this.props.productId}/>
+              <CarouselProductDetail productId={this.props.productId} />
             </Col>
             <Col xs="6">
               <Nav tabs>
