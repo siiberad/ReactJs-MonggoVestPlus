@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col, CardFooter, CardHeader } from 'reactstrap';
+import { Link } from "react-router-dom";
 import '../assets/scss/_footerstyle.scss';
 
 class AppFooter extends Component {
@@ -18,7 +19,7 @@ class AppFooter extends Component {
                 <CardFooter>
                         <ul className="ul-footer">
                             <li className="text-footer">
-                            <a className="link-footer" href='/'>Investasi</a>
+                            <Link className="link-footer" style={{ textDecoration: 'none' }} to="/allproduct/0/productId/DESC/0">Investasi</Link>
                             </li>
                             <li className="text-footer">
                             <a className="link-footer" href='/carakerja'>Cara Kerja</a>
