@@ -33,9 +33,29 @@
   }
 }
 
+[type="search"] {
+  border-style: none;
+  border-color: transparent;
+  text-align: center;
+}
+
 .kembali-search {
   list-style: none;
 
+}
+
+#button-search {
+  position: absolute;
+  display: inline-block;
+  justify-content: flex-end;
+  right: 20vh;
+}
+
+.kembali-buttons {
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  justify-content: center;
 }
     
   
