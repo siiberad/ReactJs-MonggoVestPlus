@@ -1,4 +1,4 @@
-// import React, { Component, Pagination, PaginationItem, PaginationLink} from 'react';
+// import React, { Component, PaginationLink} from 'react';
 // import {Link} from 'react-router-dom';
 
 // class GetPagination extends Component {
@@ -9,7 +9,7 @@
   
 //   render () {
 //     let { number, sortingBy}  = this.props.page;
-    
+
 //     return (
 //       <PaginationItem>
 //                 <PaginationLink>

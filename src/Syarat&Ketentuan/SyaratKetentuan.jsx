@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AppNavbar from '../components/AppNavbar';
-import AppBantuan from '../pagebantuan/AppBantuan';
+import AppSyaratKetentuan from './AppSyaratKetentuan';
 import AppFooter from '../components/AppFooter';
 
-class Bantuan extends React.Component {
+class SyaratKetentuan extends React.Component {
     render(){
         return(
             <div>
                 <AppNavbar/>
-                <AppBantuan/>
+                <AppSyaratKetentuan/>
                 <AppFooter/>
             </div>
         )
     }
 }
 
-export default Bantuan;
+export default SyaratKetentuan;

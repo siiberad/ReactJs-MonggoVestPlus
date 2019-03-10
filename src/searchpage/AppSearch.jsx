@@ -1,104 +1,121 @@
-// import React from 'react';
-// import { Button, Form, FormGroup, Label, Input, Container, Link, Card, CardBody, CardImg,CardTitle, CardSubtitle, CardText} from 'reactstrap';
-// import { withLastLocation, LastLocationProvider } from 'react-router-last-location';
-// import FilterResults from 'react-filter-search';
-// import '../assets/scss/_searchstyle.scss';
-// import axios from 'axios';
-// import AppResults from './AppResults';
+import React from 'react';
+import { Button, Form, FormGroup, Label, Input, Container, NavItem,
+    Card, CardBody, CardImg,CardTitle, CardSubtitle, CardText} from 'reactstrap';
+import { Redirect } from 'react-router-dom';
+import { withLastLocation } from 'react-router-last-location';
+import FilterResults from 'react-filter-search';
+import '../assets/scss/_searchstyle.scss';
+import axios from 'axios';
+import Search from 'react-search-input';
+// import Select from 'react-select';
+import Back from '../helpers/Back';
+// import Suggestions from '../helpers/Suggestions';
+// import option from './Productname';
+// import SearchResults from '../searchpage/fungsi';
 
-// class AppSearch extends React.Component {
-//     constructor(props){
-//         super(props);
-//         this.state = {
-//             hasil:[],
-//             query:''
-//         }
-//         this.handleChange = this.handleChange.bind(this);
-//     }
 
-//     // componentWillMount(){
-//     //     axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
-//     //     .then(res => {
-//     //         const messages = hasil.data
-//     //         console.log('isi willMount', this.state.messages)
-//     //         this.setState({
-//     //             messages:[...messages.content]
-//     //         })
-//     //     })
-        
-//     // };
-
-//     componentDidMount() {
-//         axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
-//         .then (res => {
-//             this.setState({hasil: res.data.content})
-//             console.log("uh shi up", this.state.hasil)
-//         })
-//     };
-
-//     componentWillMount(){
-//         axios.get('https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30')
-//         .then (res => {
-//             this.setState({hasil: res.data.content})
-//             console.log("nanik", this.state.hasil)
-//         })
-//     };
-
-//     handleChange = event => {
-//         const { value } = event.target;
-//         this.setState({ value });
-//         // console.log('ini value', this.state.value)
-//     };
-
+class AppSearch extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            // error: false,
+            hasil:[],
+            productName:'',
+            Redirect: false,
+            keyword:''
+            // selectedOption:null
+        }
+        // this.handleChange = this.handleChange.bind(this);
+        // this.onProductName = this.onProductName.bind(this);   yg bisa
+        this.setRedirect = this.setRedirect.bind(this);
+        this.renderRedirect = this.renderRedirect.bind(this);
+    }
     
+    
+    setRedirect = () => {
+        this.setState({
+            Redirect: true
+        })
+    }
 
-//   render() {
-//         const { hasil, value } = this.state;
-//     return (
-//         <div className="box-size-search">
-//             <Container className="search-all">
-//             {/* letak map function */}
-//                 <Form className="search-form">
+    renderRedirect = () => {
+        if (this.state.Redirect) {
+            return <Redirect to={`/results/${this.state.keyword}`}/>
+        }
+    }
+
+    onProductName = (text) => {
+        this.setState({
+            keyword: text
+        })
+    }
+
+
+    //---------------------------------------------------------------------------------------------------------------------------
+
+    // componentWillMount() {
+    //     let currentComponent = this;
+    //     axios.get(`https://mgvplus.herokuapp.com/search/searchPagination?direction=ASC&name=&orderBy=productId&page=0&size=30`)
+    //     .then(res => {
+    //         this.setState({productName: res.data.get.id.productName})
+    //         console.log('asek',res);
+    //         console.log('ahoy',res.data);
+    //         console.log('waw', res.data.content)
+    //         console.log('asiyap', this.state.productName)
+
+    //         currentComponent.setState({
+    //             hasil: res.data.productName
+    //         })
+    //         console.log('bismillah', this.state.productName)
+    //     })
+    //     .catch((error) => {
+    //         console.error('haduhh',error);
+    //     })
+    // }
+
+
+//----------------------------------------------------------------------------------------------------------
+  
+
+  render() {
+    return (
+        <div className="box-size-search">
+            <Container className="search-all">
+            {/* letak map function */}
+                <Form className="search-form">
          
-//                     <FormGroup>
-//                         <Label className="label-search" for="search-web" hidden>Search</Label>
-//                             <Input className="input-search"
-//                             type="search" 
-//                             value={value} onChange={this.handleChange} 
-//                             name="search" 
-//                             id="search-web" 
-//                             placeholder="Search" 
-//                             />
-//                             {/* <AppResults 
-//                                 value={value}
-//                                 hasil={hasil}
-//                                 renderResults={results => (
-//                                     <div>
-//                                         {results.map(el => (
-//                                             <div>
-//                                                 <span>{el.productName}</span>
-//                                             </div>
-//                                         ))}
-//                                     </div>
-//                                 )}
-//                             /> */}
-                                
-//                   </FormGroup>
-//                     <div className="div-kembli">
-//                         <p className="p-kembali">Kembali</p>
-//                     </div>
-//                 </Form>
-//             </Container>
-//         </div>
-//         )
-//     }
-// }
+                    <FormGroup>
+                        <Label className="label-search" for="search-web" hidden>Search</Label>
+                            <Search className="input-search"
+                            type="search"  
+                            onChange={this.onProductName}
+                            // options={option}
+                            // ref={Input => this.search = Input}
+                            // onChange={this.handleInputChange} 
+                            name="search" 
+                            id="search-web" 
+                            placeholder="Search" 
+                            />
+                            {this.renderRedirect()}
+                            <button id="button-search" onClick={this.setRedirect}>Cari</button>
+                            <hr/>
+                            {/* <Suggestions hasil={this.state.hasil} /> */}
+                            {/* <p>{this.state.productName}</p> */}
+                    </FormGroup>
+                        <Back/>
+                </Form>
+            </Container>
+        </div>
+        )
+    }
+}
 
-// export default AppSearch;
+export default AppSearch;
 
 
 
-// {/* <div>
+
+{/* <div>
           
 
                 

@@ -13,9 +13,9 @@ const props = () => ({
   disabled: boolean('Disabled (disabled)', false),
   light: boolean('Light variant (light)', false),
   hideTextInput: boolean('Without text input (hideTextInput)', false),
-  value: !sliderValuePropSync ? 50 : number('The value (value)', 50),
+  value: !sliderValuePropSync ? 0 : number('The value (value)', 0),
   min: number('The minimum value (min)', 0),
-  max: number('The maximum value (max)', 100),
+  max: number('The maximum value (max)', 1270),
   step: number('The step (step)', 1),
   stepMuliplier: number(
     'The step factor for Shift+arrow keys (stepMuliplier)',

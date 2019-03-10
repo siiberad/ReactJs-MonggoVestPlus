@@ -8,40 +8,23 @@ import {
   NavItem,
    } from 'reactstrap';
 import '../assets/scss/_navbarstyle.scss';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import AppLoginModalBox from '../components/AppLoginModalBox';
+import store from 'store';
+import { Link } from "react-router-dom";
 import AppLoginRegistState from './AppLoginRegistState';
+import AppUserSetting from './AppUserSetting';
 
 
 class AppNavbar extends Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
+      isLoggedIn: store.get('loggedIn')
     };
 
-    // this.navHiden = this.navHiden.bind(this);
-
-    
-  //   if (typeof window !== 'undefined') {
-  //     let prevScrollpos = window.pageYOffset;
-  //     window.onscroll = function () {
-  //       const maxScroll = document.body.clientHeight - window.innerHeight;
-  //       let currentScrollPos = window.pageYOffset;
-  //       if (
-  //         (maxScroll > 0 && prevScrollpos > currentScrollPos && prevScrollpos <= maxScroll)
-  //         || (maxScroll <= 0 && prevScrollpos > currentScrollPos)
-  //         || (prevScrollpos <= 0 && currentScrollPos <= 0)
-  //       ) {
-  //         document.getElementById("navbar").style.top = "0";
-  //       } else {
-  //         document.getElementById("navbar").style.top = "-5.0rem";
-  //       }
-  //       prevScrollpos = currentScrollPos;
-  //     }
-  //   }
+    this.toggle = this.toggle.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   toggle() {
@@ -49,18 +32,39 @@ class AppNavbar extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
+  checkAuth=()=>{
+    this.setState({isLoggedIn: store.get('loggedIn') === true})
+  }
+
+  handleLogout() {
+    localStorage.removeItem('JWT_TOKEN');
+    store.set('loggedIn', false);
+    // console.log('di handle logout',store.get('loggedIn'));
+    this.setState({isLoggedIn: !this.state.isLoggedIn})
+  }
+
   render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    // console.log(isLoggedIn)
+    let isActive;
+
+    if (isLoggedIn !== true) {
+      isActive = <AppLoginRegistState checkAuth={this.checkAuth}/>;
+    } else {
+      isActive = <AppUserSetting handleLogout={this.handleLogout}/>;
+    }
     return (
       <div>
         <Navbar id="navbar" color="light" className="colornav" light expand="md" fixed='top'>
           <NavbarBrand href="/" className="napbar">
-          <img src="https://res.cloudinary.com/monggovestplus/image/upload/v1551762164/logomonggovest.png" height ="35" />
+            <img src="https://res.cloudinary.com/monggovestplus/image/upload/v1551762164/logomonggovest.png" height="35" />
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <Link className='nav-app' to='/'>Investasi</Link>
+                <Link className='nav-app' to='/investasi'>Investasi</Link>
               </NavItem>
               <NavItem>
                 <Link className='nav-app' to='/carakerja'>Cara Kerja</Link>
@@ -69,14 +73,24 @@ class AppNavbar extends Component {
                 <Link className='nav-app' to='/tentangkami'>Tentang Kami</Link>
               </NavItem>
               <NavItem>
+                <Link className='nav-app' to='/syarat'>Syarat dan Ketentuan</Link>
+              </NavItem>
+              <NavItem>
                 <Link className='nav-app' to='/bantuan'>Bantuan</Link>
               </NavItem>
-              <AppLoginRegistState/>
-              {/*<button id="bt-search" to='/search'>*/}
-                {/*<Link to='/search'>*/}
-                  {/*<img src="https://cdn.pixabay.com/photo/2017/03/19/03/48/material-icon-2155442_1280.png" height="35" />*/}
-                {/*</Link>*/}
-              {/*</button>*/}
+              <NavItem>
+                {isActive}
+              {/* {this.state.isLoggedIn ?
+                (<AppLoginRegistState />) : (<AppUserSetting />)} */}
+              </NavItem>
+              {/* <NavItem>
+                  <Link id="bt-nav" to='/login'>Login</Link>
+              </NavItem> */}
+              <button id="bt-search" to='/search'>
+                <Link to='/search'>
+                  <img src="https://res.cloudinary.com/monggovestplus/image/upload/v1552120428/icon_search.png" height="35" />
+                </Link>
+              </button>
             </Nav>
           </Collapse>
         </Navbar>

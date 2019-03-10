@@ -8,6 +8,9 @@ import Currency from 'react-currency-formatter';
 class GetAllCards extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      productModel: '',
+  }
   }
   
   render () {
@@ -21,7 +24,9 @@ class GetAllCards extends Component {
             <CardTitle>{name}</CardTitle>
             <CardSubtitle>{province}</CardSubtitle>
             <CardText ><b><Currency quantity={harga} currency="IDR" locale="id_ID"  /></b></CardText>
-            <Button color="primary" > Lihat</Button>
+            <Buttoncolor="primary">
+              Lihat
+              </Button>
           </CardBody>
           </Link>
         </Card>
