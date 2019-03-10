@@ -1,6 +1,6 @@
 import React from 'react';
 import AppNavbar from '../components/AppNavbar';
-import AppCard from '../pages/AppCard';
+import AppHomeCard from '../components/AppHomeCard';
 import AppFooter from '../components/AppFooter';
 import { Container, Row, Col } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -20,12 +20,12 @@ class HomePages extends React.Component {
                 <AppBanner/>
                 <AppIcon/>
                 <h2 className="text-home" md="12">Instrumen Investasi Terpopuler</h2>
-                <AppCard/>
+                <AppHomeCard/>
 
                 <div>
                     <Container>
                         <Row>
-                            <a className="btn btn-white btn-animated"><Link to="/allproduct">TAMPILKAN LEBIH BANYAK</Link></a>
+                            <a className="btn btn-white btn-animated"><Link style={{ textDecoration: 'none' }} to="/allproduct/0/productId/DESC/0">TAMPILKAN LEBIH BANYAK</Link></a>
                         </Row>
                     </Container>
                 </div>

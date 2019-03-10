@@ -2,11 +2,10 @@ import React, { Component }  from 'react';
 import { Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button, Row, Col, CardText, Container } from 'reactstrap';
 import '../assets/css/cardstyle.css';
-import GetAllCards from '../pageinvestasi/GetAllCards';
+import GetAllCards from './GetAllCards';
 
 import axios from 'axios';
-
-class AppCardAll extends Component{
+class AppHomeCard extends Component{
     constructor(props) {
         super(props)
         this.state = {
@@ -15,30 +14,30 @@ class AppCardAll extends Component{
           }
 
     }
-
+    
 
     componentDidMount(){
       this.loadData(this.props.params);
-
+                
     }
     componentWillReceiveProps(params){
       if(this.props.params != params.params){
         console.log("new params", params);
         this.loadData(params.params)
-
+          
       }
      }
 
     loadData = (params) =>{
       console.log("data match", params);
-             axios.get(`/pagination/conditionalPagination?groupedBy=${params.group}&orderBy=${params.order}&direction=${params.arah}&page=${params.nomorhalaman}&size=9`)
-      // axios.get("https://mgvplus.herokuapp.com/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=6")
+             axios.get(`/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=3`)
+      // axios.get("https://mgvplus.herokuapp.com/pagination/conditionalPagination?groupedBy=0&orderBy=productId&direction=DESC&page=0&size=6")  
           .then(response =>
               response.data.content.map(product => ({
                   id: `${product.productId}` ,
                 name: `${product.productName}` ,
                 province: `${product.provinceModel.provinceName}`,
-                harga: `${product.productPrice}`,
+                harga: `${product.hargaModal}`,
                 image: `${product.productImage1}`
               }))
             )
@@ -50,12 +49,9 @@ class AppCardAll extends Component{
                 });
                 console.log("mantap",this.state.products)
               })
-            .then(response =>{
-              localStorage.setItem('product_id',response.data.product.productId)
-            })
-            .catch(error => this.setState({ error, isLoading: false }));
+              .catch(error => this.setState({ error, isLoading: false }));
     }
-
+            
         
         render () {
             let produk = this.state.products.map(product=> {
@@ -76,4 +72,4 @@ class AppCardAll extends Component{
 }
 
 
-export default AppCardAll;
+export default AppHomeCard;

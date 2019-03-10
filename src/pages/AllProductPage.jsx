@@ -13,25 +13,43 @@ import SortingDropDown from '../components/SortingDropdown';
 
 
 class AllProductPage extends React.Component{
+    
+    constructor(props){
+        super(props);
+        const { match: { params } } = this.props;
+        this.state = {
+            productparams:{
+                group:params.group,
+                order:params.order,
+                arah:params.arah,
+                nomorhalaman:params.nomorhalaman
+                 }
+        }    
+    }
+    componentDidMount(){
+        
+        console.log("props", this.state);
+
+    }
+    componentWillReceiveProps(productparams){
+        if(this.props.productparams != productparams){
+            this.setState({productparams:productparams.match.params})
+            console.log("tes", productparams)
+        }
+       }
     render(){
         return(
             <div>
                <AppNavbar/> <br/><br/><br/>
                <Table borderless  >
-                <tr>
-                    <th>Provinsi</th>
-                    
-                    <th>Urutkan Berdasarkan</th> 
-                    
-                    <th>Pencarian</th>
-                </tr>
+                
                 <tr >
                     <td >
-                    <GroupingDropDown/>
+                    <GroupingDropDown product={this.state.productparams}/>
                     </td>
                     
                     <td >
-                    <SortingDropDown/>
+                    <SortingDropDown  sorting={this.state.productparams}/>
                     </td>
                     
                 </tr>
@@ -40,8 +58,8 @@ class AllProductPage extends React.Component{
                </Table>
                
                 <h2 className="text-home" md="12">DAFTAR INSTRUMEN INVESTASI</h2>
-                <AppCardAll/>
-                <CardPagination/>
+                <AppCardAll params={this.state.productparams}/>
+                {/* <CardPagination/> */}
                 
                 <AppFooter/>
             </div>

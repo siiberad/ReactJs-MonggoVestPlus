@@ -39,6 +39,7 @@ class AppRouter extends React.Component {
                             <Route path='/homepage' component={HomePages} />
                             <Route path='/investasi' component={Investasi} />
                             <Route path='/syarat' component={SyaratKetentuan} />
+                            <Route exact path='/allproduct/:group/:order(hargaModal|productId)/:arah(ASC|DESC)/:nomorhalaman' component={AllProductPage}  />
                         </div>
                     </LastLocationProvider>
                 </Router>
